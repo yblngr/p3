@@ -1,0 +1,81 @@
+/**
+* Styles d'une carte de restaurant
+*/
+
+.card {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: $general-background-color;
+  box-shadow: 0px 6px 6px $item-shadow-color;
+  margin-bottom: 18px;
+
+  &__picture {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 174px;
+    overflow: hidden;
+
+    & img {
+      object-fit: cover;
+      width: 100%;
+      align-self: stretch;
+    }
+  }
+
+  &__sticky {
+    position: absolute;
+    background: $tertiary-color;
+    color: $sticky-text-color;
+    font-size: 0.84rem;
+    font-weight: 700;
+    top: 13px;
+    right: 12px;
+    padding: 6.5px 12px;
+    border-radius: 3px;
+  }
+
+  &__label {
+    position: relative;
+    width: calc(100% - 46px);
+    padding: 16px 13px 15px 13px;
+
+    & h3 {
+      font-size: 1.14rem;
+      margin-bottom: 5px;
+    }
+
+    & p {
+      font-size: 1.06rem;
+    }
+  }
+
+  &__like {
+    position: absolute;
+    font-size: 1.38rem;
+    right: -1.38rem;
+    top: 1.38rem;
+
+    &--off {
+      background: $general-background-color;
+      z-index: 1;
+
+      &:hover {
+        z-index: 0;
+      }
+    }
+
+    &--on {
+      background: linear-gradient($primary-color, $secondary-color);
+      background-clip: text;
+      color: transparent;
+      z-index: 0;
+
+      &:hover {
+        z-index: 1;
+      }
+    }
+  }
+}

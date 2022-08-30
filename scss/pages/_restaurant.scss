@@ -1,0 +1,150 @@
+/**
+* Styles spécifiques à la page du restaurant "À la française"
+*/
+
+main {
+
+  & header {
+    margin: 0;
+
+    & picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 260px;
+      overflow: hidden;
+
+      & img {
+        object-fit: cover;
+        width: 100%;
+        align-self: stretch;
+      }
+    }
+
+    & .label {
+      position: relative;
+      padding: 36px 20px 33px 20px;
+      background: $section-background-color;
+      border-radius: 40px 40px 0 0;
+      margin-top: -40px;
+
+      & h1 {
+        display: inline-block;
+        width: calc(100% - 46px);
+        font-size: 1.75rem;
+        font-weight: 400;
+      }
+
+      & .like {
+        position: absolute;
+        font-size: 1.38rem;
+        right: 2.38rem;
+        top: 2.38rem;
+
+        &--off {
+          background: $section-background-color;
+          z-index: 1;
+
+          &:hover {
+            z-index: 0;
+          }
+        }
+
+        &--on {
+          background: linear-gradient($primary-color, $secondary-color);
+          background-clip: text;
+          color: transparent;
+          z-index: 0;
+
+          &:hover {
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+
+  & .menu {
+    background: $section-background-color;
+    padding: 0 12px 10px 14px;
+
+    & .service {
+      margin-bottom: 40px;
+
+      &__name {
+        margin: 0 6px 14px 6px;
+
+        & h2 {
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 1.04rem;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    & .dish {
+      display: flex;
+      background: $general-background-color;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      margin-bottom: 16px;
+
+      &__name {
+        margin: 13px 11px 12px 11px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+
+        & h3 {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 1.07rem;
+          margin-bottom: 6px;
+        }
+
+        & p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 0.94rem;
+        }
+      }
+
+      &__price {
+        align-self: flex-end;
+        font-size: 0.94rem;
+        font-weight: 700;
+        margin: 13px 23px 11px 11px;
+      }
+
+      &__check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        flex-shrink: 0;
+        width: 59px;
+        background: $tertiary-color;
+        font-size: 1.25rem;
+        margin-right: -59px;
+        transition: margin-right 200ms ease-in-out;
+      }
+    }
+
+    & .dish:hover .dish__check {
+      margin-right: 0;
+    }
+  }
+
+  & .order {
+    display: flex;
+    justify-content: center;
+    background-color: $section-background-color;
+    padding-bottom: 83px;
+
+    & .button {
+      padding: 0 49px;
+    }
+  }
+}

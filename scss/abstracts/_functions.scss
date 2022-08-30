@@ -1,0 +1,31 @@
+// Fonctions Sass
+
+/// Wrapper de la fonction native `url(..)`
+/// @param {String} $base - URL de base de la ressource
+/// @param {String} $type - dossier du type de ressource (par ex. `fonts/`)
+/// @param {String} $path - chemin de la ressource
+/// @return {Url}
+/// 
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+/// Retourne l'URL d'une image en fonction de son chemin
+/// @param {String} $path - chemin de l'image
+/// @param {String} $base [$base-url] - URL de base
+/// @return {Url}
+/// @require $base-url
+/// 
+@function image($path, $base: $base-url) {
+  @return asset($base, 'images/', $path);
+}
+
+/// Retourne l'URL d'une police en fonction de son chemin
+/// @param {String} $path - chemin de la police
+/// @param {String} $base [$base-url] - URL de base
+/// @return {Url}
+/// @require $base-url
+/// 
+@function font($path, $base: $base-url) {
+  @return asset($base, 'fonts/', $path);
+}

@@ -1,0 +1,38 @@
+/**
+* Styles de base
+*/
+
+/// Modèle de boîte
+/// @author Chris Coyer
+/// @link https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+ol,
+ul {
+  margin: 0;
+}
+
+ul, ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+// Liens
+
+a {
+  text-decoration: none;
+  color: $general-text-color;
+}

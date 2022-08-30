@@ -1,0 +1,40 @@
+// Variables Sass
+
+/// URL de base de toutes les ressources (polices de caractères, images, ...)
+/// @type String
+$base-url: '../assets/' !default;
+
+// Pile de polices de caractères par défaut
+$font-stack-default: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+
+// Pile de polices de caractères pour le titre
+$font-stack-title: 'Shrikhand', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+// Chemin des polices FontAwesome
+$fa-font-path: '../assets/fonts/fontawesome';
+
+// Couleurs de la charte graphique
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$tertiary-color: #99e2d0;
+
+// Couleurs dérivées de la charte graphique
+$item-selected-background-color: scale-color($primary-color, $lightness: 90%);
+$sticky-text-color: scale-color($tertiary-color, $lightness: -60%);
+
+// Couleurs dégradées de gris
+$general-text-color: black;
+$general-background-color: white;
+$header-arrow-color: scale-color($general-background-color, $lightness: -79.2%);      // #353535;
+$section-background-color: scale-color($general-background-color, $lightness: -3.5%); // #f6f6f6;
+$input-background-color: scale-color($general-background-color, $lightness: -8.2%);   // #eaeaea;
+$input-shadow-color: scale-color($general-background-color, $lightness: -19.2%);      // #cecece;
+$button-shadow-color: scale-color($general-background-color, $lightness: -22.3%);     // #c6c6c6;
+$item-background-color: $section-background-color;
+$item-shadow-color: scale-color($general-background-color, $lightness: -10.6%);       // #e4e4e4;
+$item-icon-color: scale-color($general-background-color, $lightness: -50.6%);         // #7e7e7e;
+$footer-background-color: $header-arrow-color;
+$footer-text-color: $general-background-color;
+
+// Largeur maximale du corps d'une page
+$max-width: 1024px;

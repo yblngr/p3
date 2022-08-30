@@ -1,0 +1,48 @@
+/**
+* Styles spécifiques à la page d'accueil
+*/
+
+.search-form {
+  background: $section-background-color;
+  text-align: center;
+  padding: 0 0 57px 0;
+
+  & h2 {
+    font-size: 1.48rem;
+    font-weight: 700;
+    padding: 0 45px;
+    margin: 39px 0 13px 0;
+  }
+
+  & p {
+    font-size: 1.13rem;
+    padding: 0 30px;
+    margin: 0 0 31px 0;
+  }
+}
+
+.workflow {
+  padding: 0 20px;
+  margin: 48px 0 0 0;
+
+  & h2 {
+    font-size: 1.46rem;
+    font-weight: 700;
+    margin: 0 0 26px 0;
+  }
+
+  & ol {
+    list-style-type: none;
+    padding: 0 0 45px 0;
+  }
+}
+
+.restaurants {
+  padding: 54px 20px 46px 20px;
+  background: $section-background-color;
+
+  & h2 {
+    font-size: 1.46rem;
+    margin: 0 0 23px 0;
+  }
+}

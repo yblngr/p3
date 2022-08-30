@@ -1,0 +1,25 @@
+/**
+* Styles de l'icône 'like'
+*/
+
+.like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+
+  &--off {
+    background: $general-background-color;
+    z-index: 1;
+
+    &:hover {
+      z-index: -1;
+    }
+  }
+
+  &--on {
+    background: linear-gradient($primary-color, $secondary-color);
+    background-clip: text;
+    color: transparent;
+  }
+}

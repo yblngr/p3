@@ -1,0 +1,37 @@
+@charset 'utf-8';
+
+// 1. Configuration
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Tierces parties
+@import 'vendors/normalize';
+@import 'vendors/fontawesome/fontawesome.scss';
+@import 'vendors/fontawesome/solid.scss';
+@import 'vendors/fontawesome/regular.scss';
+
+// 3. Base
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+
+// 4. Mise en page
+@import 'layout/layout';
+@import 'layout/header';
+@import 'layout/footer';
+
+// 5. Composants
+@import 'components/search-input';
+@import 'components/button';
+@import 'components/step';
+@import 'components/like';
+@import 'components/card';
+@import 'components/underline';
+
+// 6. Pages
+@import 'pages/homepage';
+@import 'pages/restaurant';
+
+// 7. Thèmes
+@import 'themes/default';
