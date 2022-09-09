@@ -1,24 +1,28 @@
 {
-    "name": "p3",
-    "version": "1.0.0",
-    "description": "Dynamisez une page web avec des animations CSS",
-    "main": "index.js",
-    "scripts": {
-        "sass": "sass -w --no-source-map scss/main.scss:css/styles.css",
-        "prefix": "postcss css/styles.css -u autoprefixer -r --no-map"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/yblngr/p3.git"
-    },
-    "keywords": [
-        "Sass",
-        "Animations"
-    ],
-    "author": "Yvan Boulanger",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/yblngr/p3/issues"
-    },
-    "homepage": "https://github.com/yblngr/p3#readme"
+  "name": "p3",
+  "version": "1.0.0",
+  "description": "Dynamisez une page web avec des animations CSS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass -w --no-source-map scss/main.scss:css/styles.css",
+    "prefix": "postcss css/styles.css -u autoprefixer -r --no-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yblngr/p3.git"
+  },
+  "keywords": [
+    "Sass",
+    "Animations"
+  ],
+  "author": "Yvan Boulanger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yblngr/p3/issues"
+  },
+  "homepage": "https://github.com/yblngr/p3#readme",
+  "devDependencies": {
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0"
+  }
 }

@@ -1,13 +1,36 @@
-/**
-* Polices de caractères
+/*
+** Polices de caractères
 */
 
-@font-face {
-  src: font('RobotoFlex-VariableFont_GRAD,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght.ttf') format('truetype');
-  font-family: 'Roboto';
-}
+// Roboto Regular
 
 @font-face {
-  src: font('Shrikhand-Regular.ttf') format('truetype');
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: font('Roboto-Regular.woff2') format('woff2'),
+    font('Roboto-Regular.ttf') format('truetype');
+}
+
+// Roboto Bold
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: font('Roboto-Bold.woff2') format('woff2'),
+    font('Roboto-Bold.ttf') format('truetype');
+}
+
+// Shrikhand
+
+@font-face {
   font-family: 'Shrikhand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: font('Shrikhand-Regular.woff2') format('woff2'),
+    font('Shrikhand-Regular.ttf') format('truetype');
 }

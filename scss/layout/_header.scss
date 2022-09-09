@@ -1,12 +1,12 @@
-/**
-* Styles pour l'en-tête de page
+/*
+** Styles pour l'en-tête de page
 */
 
 header {
   margin: 20px 0 10px 0;
 
   & a {
-    font-size: 1.28rem;
+    font-size: 20.5px;
     color: $header-arrow-color;
     position: absolute;
     left: 23px;
@@ -14,7 +14,7 @@ header {
   }
 
   & .logo {
-    font-size: 1.81rem;
+    font-size: 29px;
     text-align: center;
   }
 }

@@ -1,5 +1,5 @@
-/**
-* Styles d'une carte de restaurant
+/*
+** Styles d'une carte de restaurant
 */
 
 .card {
@@ -29,7 +29,7 @@
     position: absolute;
     background: $tertiary-color;
     color: $sticky-text-color;
-    font-size: 0.84rem;
+    font-size: 13.3px;
     font-weight: 700;
     top: 13px;
     right: 12px;
@@ -43,20 +43,20 @@
     padding: 16px 13px 15px 13px;
 
     & h3 {
-      font-size: 1.14rem;
+      font-size: 17.4px;
       margin-bottom: 5px;
     }
 
     & p {
-      font-size: 1.06rem;
+      font-size: 16.9px;
     }
   }
 
   &__like {
     position: absolute;
-    font-size: 1.38rem;
-    right: -1.38rem;
-    top: 1.38rem;
+    font-size: 22px;
+    right: -22px;
+    top: 22px;
 
     &--off {
       background: $general-background-color;

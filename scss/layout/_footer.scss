@@ -1,5 +1,5 @@
-/**
-* Styles pour le pied de page
+/*
+** Styles pour le pied de page
 */
 
 footer {
@@ -8,14 +8,14 @@ footer {
 
   & h1 {
     color: $footer-text-color;
-    font-size: 1.12rem;
+    font-size: 17.9px;
     font-weight: 400;
     margin-bottom: 16px;
   }
 
   & ul {
     list-style-type: none;
-    line-height: 1.64rem;
+    line-height: 26.2px;
     padding-left: 0;
   }
 
@@ -28,12 +28,12 @@ footer {
     }
 
     & i {
-      font-size: 0.78rem;
+      font-size: 12.3px;
       padding-right: 22px;
     }
 
     & p {
-      font-size: 1.03rem;
+      font-size: 16.3px;
     }
   }
 }

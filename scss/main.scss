@@ -1,27 +1,25 @@
 @charset 'utf-8';
 
-// 1. Configuration
+// 1. Configuration (abstracts)
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 
-// 2. Tierces parties
-@import 'vendors/normalize';
-@import 'vendors/fontawesome/fontawesome.scss';
-@import 'vendors/fontawesome/solid.scss';
-@import 'vendors/fontawesome/regular.scss';
+// 2. Tierces parties (vendors)
+// Intégration des codes de 'normalize' et 'fontawesome' abandonnée
+// en raison des erreurs et avertissements générés par le validateur du W3C
 
-// 3. Base
+// 3. Base (base)
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/typography';
 
-// 4. Mise en page
+// 4. Mise en page (layout)
 @import 'layout/layout';
 @import 'layout/header';
 @import 'layout/footer';
 
-// 5. Composants
+// 5. Composants (components)
 @import 'components/search-input';
 @import 'components/button';
 @import 'components/step';
@@ -29,9 +27,9 @@
 @import 'components/card';
 @import 'components/underline';
 
-// 6. Pages
+// 6. Pages (pages)
 @import 'pages/homepage';
 @import 'pages/restaurant';
 
-// 7. Thèmes
+// 7. Thèmes (themes)
 @import 'themes/default';

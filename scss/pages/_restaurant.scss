@@ -1,5 +1,5 @@
-/**
-* Styles spécifiques à la page du restaurant "À la française"
+/*
+** Styles spécifiques à la page du restaurant "À la française"
 */
 
 main {
@@ -31,15 +31,15 @@ main {
       & h1 {
         display: inline-block;
         width: calc(100% - 46px);
-        font-size: 1.75rem;
+        font-size: 28px;
         font-weight: 400;
       }
 
       & .like {
         position: absolute;
-        font-size: 1.38rem;
-        right: 2.38rem;
-        top: 2.38rem;
+        font-size: 22px;
+        right: 38px;
+        top: 38px;
 
         &--off {
           background: $section-background-color;
@@ -77,7 +77,7 @@ main {
         & h2 {
           text-transform: uppercase;
           font-weight: 400;
-          font-size: 1.04rem;
+          font-size: 16.5px;
           margin-bottom: 5px;
         }
       }
@@ -93,7 +93,7 @@ main {
       box-shadow: 0px 5px 5px #c6c6c6;
 
       &__name {
-        margin: 13px 11px 12px 11px;
+        margin: 13px 0 12px 11px;
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
@@ -101,22 +101,22 @@ main {
         & h3 {
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 1.07rem;
+          font-size: 17.4px;
           margin-bottom: 6px;
         }
 
         & p {
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 0.94rem;
+          font-size: 15px;
         }
       }
 
       &__price {
         align-self: flex-end;
-        font-size: 0.94rem;
+        font-size: 15px;
         font-weight: 700;
-        margin: 13px 23px 11px 11px;
+        margin: 13px 23px 11px 13px;
       }
 
       &__check {
@@ -127,7 +127,7 @@ main {
         flex-shrink: 0;
         width: 59px;
         background: $tertiary-color;
-        font-size: 1.25rem;
+        font-size: 20px;
         margin-right: -59px;
         transition: margin-right 200ms ease-in-out;
       }

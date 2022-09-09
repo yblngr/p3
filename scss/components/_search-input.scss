@@ -1,5 +1,5 @@
-/**
-* Styles du champ du formulaire de recherche
+/*
+** Styles du champ du formulaire de recherche
 */
 
 .search-input {
@@ -9,14 +9,12 @@
   height: 50px;
   background: linear-gradient($input-shadow-color, $input-background-color 10%);
 
-  &__label {
-    margin-right: 15px;
-  }
-
+  
   &__field {
+    margin-left: 11px;
     background-color: transparent;
     border: none;
-    font-size: 0.95rem;
+    font-size: 15.25px;
     font-weight: 700;
     width: 140px;
 
