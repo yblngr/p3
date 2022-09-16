@@ -50,32 +50,13 @@
     & p {
       font-size: 16.9px;
     }
-  }
 
-  &__like {
-    position: absolute;
-    font-size: 22px;
-    right: -22px;
-    top: 22px;
+    & .like {
+      position: absolute;
+      font-size: 22px;
+      right: -22px;
+      top: 22px;
 
-    &--off {
-      background: $general-background-color;
-      z-index: 1;
-
-      &:hover {
-        z-index: 0;
-      }
-    }
-
-    &--on {
-      background: linear-gradient($primary-color, $secondary-color);
-      background-clip: text;
-      color: transparent;
-      z-index: 0;
-
-      &:hover {
-        z-index: 1;
-      }
     }
   }
 }

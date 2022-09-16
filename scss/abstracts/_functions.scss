@@ -1,4 +1,6 @@
 // Fonctions Sass
+@use "sass:list";
+@use "sass:math";
 
 /// Wrapper de la fonction native `url(..)`
 /// @param {String} $base - URL de base de la ressource
@@ -28,4 +30,26 @@
 /// 
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
+}
+
+/// Retourne une liste d'arguments de la propriété 'text-shadow' pour détourer un texte
+/// @param {Length} $offset - épaisseur du détourage (décalage du l'ombre)
+/// @param {Color} $color - couleur du détourage
+/// @param {Number} $depth [1] - détermine le nombre de règles appliquées à la propriété 'text-shadow'
+/// @param {Length} $blur [0] - rayon de flou appliqué au détourage
+/// @return {List}
+/// @require $offset
+/// @require $color
+/// 
+@function text-stroke($offset, $color, $depth: 1, $blur: 0) {
+  $step: calc(90deg / $depth);
+  $angle: 0deg;
+  $stroke: ();
+
+  @while $angle < 360deg {
+    $stroke: list.append($stroke, math.cos($angle)*$offset math.sin($angle)*$offset $blur $color, $separator: comma);
+    $angle: $angle +$step;
+  }
+
+  @return $stroke;
 }

@@ -1,25 +1,78 @@
 /*
-** Styles de l'icône 'like'
+** Styles et animation de l'icône 'like'
 */
+
+$like-size: 22px;
+$like-thickness: 1px;
+$like-duration: 300ms;
 
 .like {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  position: relative;
+  width: $like-size;
+  height: $like-size;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: $like-size - 2*$like-thickness;
+}
 
-  &--off {
-    background: $general-background-color;
-    z-index: 1;
+.like::before,
+.like::after {
+  content: "\f004";
+  position: absolute;
+}
 
-    &:hover {
-      z-index: -1;
-    }
+.like::before {
+  color: white;
+  text-shadow: text-stroke($like-thickness, black, 3);
+}
+
+@keyframes like-off-hide {
+
+  0%,
+  70% {
+    opacity: 1;
   }
 
-  &--on {
-    background: linear-gradient($primary-color, $secondary-color);
-    background-clip: text;
-    color: transparent;
+  100% {
+    opacity: 0;
+  }
+}
+
+.like::after {
+  background: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+}
+
+@keyframes like-on-grow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0.4375*$like-size) scale(0.0);
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(calc(1 + 2*$like-thickness/$like-size));
+  }
+}
+
+.like:hover {
+  cursor: pointer;
+
+  &::before {
+    animation: like-off-hide $like-duration ease-in-out forwards;
+  }
+
+  &::after {
+    animation: like-on-grow $like-duration ease-in-out forwards;
   }
 }

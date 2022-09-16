@@ -158,9 +158,13 @@ footer li p {
   font-size: 16.5px;
   padding: 0 22px;
   box-shadow: 0px 5px 5px #c6c6c6;
+  transition-property: box-shadow, opacity;
+  transition-duration: 300ms;
 }
 .button:hover {
   cursor: pointer;
+  box-shadow: 0px 5px 5px #959595;
+  opacity: 0.75;
 }
 
 /*
@@ -208,25 +212,67 @@ footer li p {
 }
 
 /*
-** Styles de l'icône 'like'
+** Styles et animation de l'icône 'like'
 */
 .like {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  position: relative;
+  width: 22px;
+  height: 22px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 20px;
 }
-.like--off {
-  background: white;
-  z-index: 1;
+
+.like::before,
+.like::after {
+  content: "\f004";
+  position: absolute;
 }
-.like--off:hover {
-  z-index: -1;
+
+.like::before {
+  color: white;
+  text-shadow: 1px 0px 0 black, 0.8660254038px 0.5px 0 black, 0.5px 0.8660254038px 0 black, 0px 1px 0 black, -0.5px 0.8660254038px 0 black, -0.8660254038px 0.5px 0 black, -1px 0px 0 black, -0.8660254038px -0.5px 0 black, -0.5px -0.8660254038px 0 black, 0px -1px 0 black, 0.5px -0.8660254038px 0 black, 0.8660254038px -0.5px 0 black;
 }
-.like--on {
+
+@keyframes like-off-hide {
+  0%, 70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.like::after {
   background: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
+  opacity: 0;
+}
+
+@keyframes like-on-grow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 9.625px) scale(0);
+  }
+  50%, 100% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1.0909090909);
+  }
+}
+.like:hover {
+  cursor: pointer;
+}
+.like:hover::before {
+  animation: like-off-hide 300ms ease-in-out forwards;
+}
+.like:hover::after {
+  animation: like-on-grow 300ms ease-in-out forwards;
 }
 
 /*
@@ -276,27 +322,11 @@ footer li p {
 .card__label p {
   font-size: 16.9px;
 }
-.card__like {
+.card__label .like {
   position: absolute;
   font-size: 22px;
   right: -22px;
   top: 22px;
-}
-.card__like--off {
-  background: white;
-  z-index: 1;
-}
-.card__like--off:hover {
-  z-index: 0;
-}
-.card__like--on {
-  background: linear-gradient(#9356dc, #ff79da);
-  background-clip: text;
-  color: transparent;
-  z-index: 0;
-}
-.card__like--on:hover {
-  z-index: 1;
 }
 
 /*
@@ -306,6 +336,92 @@ footer li p {
   width: 40px;
   height: 3px;
   background: #99e2d0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes spin {
+  from, 60% {
+    transform: rotate(-270deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+.dish {
+  display: flex;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 16px;
+  box-shadow: 0px 5px 5px #e4e4e4;
+}
+.dish:nth-child(1) {
+  animation: fade-in 800ms 0ms backwards;
+}
+.dish:nth-child(2) {
+  animation: fade-in 800ms 180ms backwards;
+}
+.dish:nth-child(3) {
+  animation: fade-in 800ms 360ms backwards;
+}
+.dish:nth-child(4) {
+  animation: fade-in 800ms 540ms backwards;
+}
+.dish__name {
+  margin: 13px 0 12px 11px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.dish__name h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 17.4px;
+  margin-bottom: 6px;
+}
+.dish__name p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+}
+.dish__price {
+  align-self: flex-end;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 13px 23px 11px 13px;
+}
+.dish__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: white;
+  flex-shrink: 0;
+  width: 59px;
+  background: #99e2d0;
+  font-size: 20px;
+  margin-right: -59px;
+  transition: margin-right 500ms ease-in-out;
+}
+.dish__check::before {
+  content: "\f058";
+}
+.dish:hover .dish__check {
+  margin-right: 0;
+}
+.dish:hover .dish__check::before {
+  animation: spin 500ms ease-out forwards;
 }
 
 /*
@@ -388,22 +504,6 @@ main header .label .like {
   right: 38px;
   top: 38px;
 }
-main header .label .like--off {
-  background: #f6f6f6;
-  z-index: 1;
-}
-main header .label .like--off:hover {
-  z-index: 0;
-}
-main header .label .like--on {
-  background: linear-gradient(#9356dc, #ff79da);
-  background-clip: text;
-  color: transparent;
-  z-index: 0;
-}
-main header .label .like--on:hover {
-  z-index: 1;
-}
 main .menu {
   background: #f6f6f6;
   padding: 0 12px 10px 14px;
@@ -420,60 +520,13 @@ main .menu .service__name h2 {
   font-size: 16.5px;
   margin-bottom: 5px;
 }
-main .menu .dish {
-  display: flex;
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  cursor: pointer;
-  margin-bottom: 16px;
-  box-shadow: 0px 5px 5px #c6c6c6;
-}
-main .menu .dish__name {
-  margin: 13px 0 12px 11px;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-main .menu .dish__name h3 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 17.4px;
-  margin-bottom: 6px;
-}
-main .menu .dish__name p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 15px;
-}
-main .menu .dish__price {
-  align-self: flex-end;
-  font-size: 15px;
-  font-weight: 700;
-  margin: 13px 23px 11px 13px;
-}
-main .menu .dish__check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  flex-shrink: 0;
-  width: 59px;
-  background: #99e2d0;
-  font-size: 20px;
-  margin-right: -59px;
-  transition: margin-right 200ms ease-in-out;
-}
-main .menu .dish:hover .dish__check {
-  margin-right: 0;
-}
-main .order {
+main .menu .order {
   display: flex;
   justify-content: center;
   background-color: #f6f6f6;
   padding-bottom: 83px;
 }
-main .order .button {
+main .menu .order .button {
   padding: 0 49px;
 }
 
@@ -484,3 +537,5 @@ body {
   background: white;
   color: black;
 }
+
+/*# sourceMappingURL=styles.css.map */

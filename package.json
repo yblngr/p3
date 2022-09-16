@@ -4,7 +4,8 @@
   "description": "Dynamisez une page web avec des animations CSS",
   "main": "index.js",
   "scripts": {
-    "sass": "sass -w --no-source-map scss/main.scss:css/styles.css",
+    "sass": "sass -w scss/main.scss:css/styles.css",
+    "sass-nomap": "sass -w --no-source-map scss/main.scss:css/styles.css",
     "prefix": "postcss css/styles.css -u autoprefixer -r --no-map"
   },
   "repository": {
@@ -17,6 +18,7 @@
   ],
   "author": "Yvan Boulanger",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/yblngr/p3/issues"
   },

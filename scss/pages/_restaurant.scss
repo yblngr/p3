@@ -40,26 +40,6 @@ main {
         font-size: 22px;
         right: 38px;
         top: 38px;
-
-        &--off {
-          background: $section-background-color;
-          z-index: 1;
-
-          &:hover {
-            z-index: 0;
-          }
-        }
-
-        &--on {
-          background: linear-gradient($primary-color, $secondary-color);
-          background-clip: text;
-          color: transparent;
-          z-index: 0;
-
-          &:hover {
-            z-index: 1;
-          }
-        }
       }
     }
   }
@@ -83,69 +63,15 @@ main {
       }
     }
 
-    & .dish {
+    & .order {
       display: flex;
-      background: $general-background-color;
-      border-radius: 15px;
-      overflow: hidden;
-      cursor: pointer;
-      margin-bottom: 16px;
-      box-shadow: 0px 5px 5px #c6c6c6;
+      justify-content: center;
+      background-color: $section-background-color;
+      padding-bottom: 83px;
 
-      &__name {
-        margin: 13px 0 12px 11px;
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-
-        & h3 {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 17.4px;
-          margin-bottom: 6px;
-        }
-
-        & p {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 15px;
-        }
+      & .button {
+        padding: 0 49px;
       }
-
-      &__price {
-        align-self: flex-end;
-        font-size: 15px;
-        font-weight: 700;
-        margin: 13px 23px 11px 13px;
-      }
-
-      &__check {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        flex-shrink: 0;
-        width: 59px;
-        background: $tertiary-color;
-        font-size: 20px;
-        margin-right: -59px;
-        transition: margin-right 200ms ease-in-out;
-      }
-    }
-
-    & .dish:hover .dish__check {
-      margin-right: 0;
-    }
-  }
-
-  & .order {
-    display: flex;
-    justify-content: center;
-    background-color: $section-background-color;
-    padding-bottom: 83px;
-
-    & .button {
-      padding: 0 49px;
     }
   }
 }
