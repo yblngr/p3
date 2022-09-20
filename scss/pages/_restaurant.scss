@@ -1,5 +1,5 @@
 /*
-** Styles spécifiques à la page du restaurant "À la française"
+** Styles spécifiques à la page des restaurants
 */
 
 main {
@@ -62,16 +62,21 @@ main {
         }
       }
     }
+  }
 
-    & .order {
-      display: flex;
-      justify-content: center;
-      background-color: $section-background-color;
-      padding-bottom: 83px;
+  & .like::before {
+    color: $section-background-color;
+  }
 
-      & .button {
-        padding: 0 49px;
-      }
+  & .order {
+    display: flex;
+    justify-content: center;
+    background-color: $section-background-color;
+    padding-bottom: 83px;
+
+    & .button {
+      padding: 0 49px;
     }
   }
+
 }

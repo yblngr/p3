@@ -25,7 +25,7 @@ $like-duration: 300ms;
 }
 
 .like::before {
-  color: white;
+  color: $general-background-color;
   text-shadow: text-stroke($like-thickness, black, 3);
 }
 

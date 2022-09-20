@@ -27,8 +27,8 @@ ul, ol {
 }
 
 a {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 }
 
 /*
@@ -124,6 +124,87 @@ footer li p {
   font-size: 16.3px;
 }
 
+/*
+** Animation au chargement
+*/
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  animation: loader 3000ms forwards;
+}
+
+.plate {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 40px solid #99e2d0;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fork,
+.knife {
+  position: absolute;
+  width: 50px;
+  height: 150px;
+  opacity: 0.8;
+}
+
+.fork {
+  fill: #9356dc;
+  animation: fork 2500ms linear both;
+}
+
+.knife {
+  fill: #ff79da;
+  animation: knife 2500ms linear both;
+}
+
+@keyframes loader {
+  from, 85% {
+    opacity: 1;
+  }
+  99%, to {
+    opacity: 0;
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes fork {
+  from {
+    transform-origin: 50% 97.5%;
+    transform: scale(0.5) translateY(-97.5%) rotate(-720deg);
+  }
+  75% {
+    transform-origin: 50% 97.5%;
+    transform: scale(0.5) translateY(-97.5%) rotate(-270deg);
+  }
+  to {
+    transform: scale(1) translateX(-125px);
+  }
+}
+@keyframes knife {
+  from {
+    transform-origin: 50% 97.5%;
+    transform: scale(0.5) translateY(-97.5%) rotate(-1440deg);
+  }
+  75% {
+    transform-origin: 50% 97.5%;
+    transform: scale(0.5) translateY(-97.5%) rotate(-90deg);
+  }
+  to {
+    transform: scale(1) translateX(125px);
+  }
+}
 /*
 ** Styles du champ du formulaire de recherche
 */
@@ -468,7 +549,7 @@ footer li p {
 }
 
 /*
-** Styles spécifiques à la page du restaurant "À la française"
+** Styles spécifiques à la page des restaurants
 */
 main header {
   margin: 0;
@@ -520,13 +601,16 @@ main .menu .service__name h2 {
   font-size: 16.5px;
   margin-bottom: 5px;
 }
-main .menu .order {
+main .like::before {
+  color: #f6f6f6;
+}
+main .order {
   display: flex;
   justify-content: center;
   background-color: #f6f6f6;
   padding-bottom: 83px;
 }
-main .menu .order .button {
+main .order .button {
   padding: 0 49px;
 }
 
