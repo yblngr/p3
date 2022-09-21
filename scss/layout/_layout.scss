@@ -2,8 +2,16 @@
 ** Mise en page du site
 */
 
+// Largeur maximale du corps d'une page
+
+$min-width: 240px;
+$max-width: 1024px;
+
 body {
+  min-width: $min-width;
+}
+
+.container {
   max-width: $max-width;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }

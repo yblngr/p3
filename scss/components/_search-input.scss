@@ -2,24 +2,45 @@
 ** Styles du champ du formulaire de recherche
 */
 
+//$input-background-color: scale-color($general-background-color, $lightness: -8.2%); // #eaeaea;
+//$input-shadow-color: scale-color($general-background-color, $lightness: -19.2%); // #cecece;
+
 .search-input {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  background: linear-gradient($input-shadow-color, $input-background-color 10%);
+  background: linear-gradient(scale-color($general-background-color, $lightness: -19.2%), scale-color($general-background-color, $lightness: -8.2%) 10%);
 
-  
+  &__label, &__field { z-index:1;}
   &__field {
     margin-left: 11px;
     background-color: transparent;
     border: none;
+    color: $general-text-color;
     font-size: 15.25px;
     font-weight: 700;
     width: 140px;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     &:focus {
       outline: none;
     }
+  }
+
+  &__background {
+    position: absolute;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: $primary-color;
+    opacity:0;
+  }
+
+  &__field:focus+&__background {
+    opacity:0.1;
   }
 }

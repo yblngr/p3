@@ -3,6 +3,7 @@
 */
 
 $plate-size: 200px;
+$loader-duration: 300ms;
 
 .loader {
     display: flex;
@@ -14,7 +15,7 @@ $plate-size: 200px;
     width: 100vw;
     height: 100vh;
     background-color: white;
-    animation: loader 3000ms forwards;
+    animation: loader $loader-duration forwards;
 }
 
 .plate {
@@ -36,12 +37,12 @@ $plate-size: 200px;
 
 .fork {
     fill: $primary-color;
-    animation: fork 2500ms linear both;
+    animation: fork 0.8*$loader-duration linear both;
 }
 
 .knife {
     fill: $secondary-color;
-    animation: knife 2500ms linear both;
+    animation: knife 0.8*$loader-duration linear both;
 }
 
 @keyframes loader {

@@ -14,7 +14,7 @@ html {
   box-sizing: inherit;
 }
 
-// Suppression des marges
+// Suppression des marges des éléments
 
 p,
 h1,
@@ -25,9 +25,10 @@ ul {
   margin: 0;
 }
 
-// Listes
+// Listes (sans puces, ni numérotation, ni retrait)
 
-ul, ol {
+ul,
+ol {
   list-style-type: none;
   padding-left: 0;
 }

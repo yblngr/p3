@@ -21,7 +21,8 @@ ul {
   margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   list-style-type: none;
   padding-left: 0;
 }
@@ -32,7 +33,7 @@ a {
 }
 
 /*
-** Polices de caractères
+** Typographie
 */
 @font-face {
   font-family: "Roboto";
@@ -55,9 +56,6 @@ a {
   font-display: swap;
   src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.ttf") format("truetype");
 }
-/*
-** Typographie
-*/
 body {
   font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -70,34 +68,43 @@ h1 {
 ** Mise en page du site
 */
 body {
+  min-width: 240px;
+}
+
+.container {
   max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 /*
 ** Styles pour l'en-tête de page
 */
-header {
-  margin: 20px 0 10px 0;
+body > header {
+  background-color: white;
 }
-header a {
+body > header .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 10px 0;
+}
+body > header .container a {
   font-size: 20.5px;
   color: #353535;
   position: absolute;
   left: 23px;
-  top: 22px;
 }
-header .logo {
+body > header .container .logo {
   font-size: 29px;
-  text-align: center;
+  margin: 0 auto;
 }
 
 /*
 ** Styles pour le pied de page
 */
 footer {
-  background: #353535;
+  background-color: #353535;
   padding: 25px 25px 30px 25px;
 }
 footer h1 {
@@ -137,7 +144,7 @@ footer li p {
   width: 100vw;
   height: 100vh;
   background-color: white;
-  animation: loader 3000ms forwards;
+  animation: loader 300ms forwards;
 }
 
 .plate {
@@ -159,12 +166,12 @@ footer li p {
 
 .fork {
   fill: #9356dc;
-  animation: fork 2500ms linear both;
+  animation: fork 240ms linear both;
 }
 
 .knife {
   fill: #ff79da;
-  animation: knife 2500ms linear both;
+  animation: knife 240ms linear both;
 }
 
 @keyframes loader {
@@ -215,16 +222,34 @@ footer li p {
   height: 50px;
   background: linear-gradient(#cecece, #eaeaea 10%);
 }
+.search-input__label, .search-input__field {
+  z-index: 1;
+}
 .search-input__field {
   margin-left: 11px;
   background-color: transparent;
   border: none;
+  color: black;
   font-size: 15.25px;
   font-weight: 700;
   width: 140px;
 }
+.search-input__field:hover {
+  cursor: pointer;
+}
 .search-input__field:focus {
   outline: none;
+}
+.search-input__background {
+  position: absolute;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #9356dc;
+  opacity: 0;
+}
+.search-input__field:focus + .search-input__background {
+  opacity: 0.1;
 }
 
 /*
@@ -244,7 +269,7 @@ footer li p {
 }
 .button:hover {
   cursor: pointer;
-  box-shadow: 0px 5px 5px #959595;
+  box-shadow: 0px 5px 5px #8c8c8c;
   opacity: 0.75;
 }
 
@@ -274,7 +299,6 @@ footer li p {
   width: 24px;
   margin-left: -12px;
   margin-right: 21px;
-  padding-top: 2px;
 }
 .step__icon {
   width: 41px;
@@ -286,7 +310,7 @@ footer li p {
   font-size: 15.4px;
 }
 .step:hover {
-  background: #f4eefc;
+  background: #f2f0f5;
 }
 .step:hover .step__icon {
   color: #9356dc;
@@ -509,20 +533,23 @@ footer li p {
 ** Styles spécifiques à la page d'accueil
 */
 .search-form {
-  background: #f6f6f6;
   text-align: center;
-  padding: 0 0 57px 0;
 }
 .search-form h2 {
   font-size: 23.7px;
   font-weight: 700;
   padding: 0 45px;
-  margin: 39px 0 13px 0;
+  margin: 0 0 13px 0;
 }
 .search-form p {
   font-size: 18.2px;
   padding: 0 30px;
   margin: 0 0 31px 0;
+}
+
+.search-caption {
+  background: #f6f6f6;
+  padding: 39px 0 57px 0;
 }
 
 .workflow {

@@ -7,17 +7,16 @@
   background: linear-gradient(to top left, $primary-color, $secondary-color);
   border: none;
   border-radius: 25px;
-  color: white;
+  color: $general-background-color;
   font-size: 16.5px;
   padding: 0 22px;
-  box-shadow: 0px 5px 5px $button-shadow-color;
+  box-shadow: 0px 5px 5px scale-color($general-background-color, $lightness: -22.3%);
   transition-property: box-shadow, opacity;
   transition-duration: 300ms;
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 5px 5px scale-color($button-shadow-color, $lightness: -25%);
+    box-shadow: 0px 5px 5px scale-color($general-background-color, $lightness: -45%);
     opacity: 0.75;
   }
 }
-

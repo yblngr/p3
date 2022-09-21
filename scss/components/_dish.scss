@@ -34,7 +34,7 @@ $check-animation-duration: 500ms;
     overflow: hidden;
     cursor: pointer;
     margin-bottom: 16px;
-    box-shadow: 0px 5px 5px $item-shadow-color;
+    box-shadow: 0px 5px 5px $shadow-color;
 
     @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
@@ -76,7 +76,7 @@ $check-animation-duration: 500ms;
         align-items: center;
         font-family: 'Font Awesome 6 Free';
         font-weight: 900;
-        color: white;
+        color: $general-background-color;
         flex-shrink: 0;
         width: 59px;
         background: $tertiary-color;

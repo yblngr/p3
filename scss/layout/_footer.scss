@@ -3,11 +3,11 @@
 */
 
 footer {
-  background: $footer-background-color;
+  background-color: scale-color($general-background-color, $lightness: -79.2%);
   padding: 25px 25px 30px 25px;
 
   & h1 {
-    color: $footer-text-color;
+    color: $general-background-color;
     font-size: 17.9px;
     font-weight: 400;
     margin-bottom: 16px;
@@ -22,7 +22,7 @@ footer {
   & li {
 
     & a {
-      color: $footer-text-color;
+      color: $general-background-color;
       display: flex;
       align-items: center;
     }

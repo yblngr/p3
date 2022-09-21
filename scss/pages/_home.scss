@@ -3,15 +3,13 @@
 */
 
 .search-form {
-  background: $section-background-color;
   text-align: center;
-  padding: 0 0 57px 0;
 
   & h2 {
     font-size: 23.7px;
     font-weight: 700;
     padding: 0 45px;
-    margin: 39px 0 13px 0;
+    margin: 0 0 13px 0;
   }
 
   & p {
@@ -19,6 +17,11 @@
     padding: 0 30px;
     margin: 0 0 31px 0;
   }
+}
+
+.search-caption {
+  background: $section-background-color;
+  padding: 39px 0 57px 0;
 }
 
 .workflow {
@@ -45,4 +48,4 @@
     font-size: 23.4px;
     margin: 0 0 23px 0;
   }
-} 
+}

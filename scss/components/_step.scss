@@ -2,13 +2,19 @@
 ** Styles d'une étape du fonctionnement
 */
 
+//$item-background-color: $section-background-color;
+//$item-shadow-color: scale-color($general-background-color, $lightness: -10.6%); // #e4e4e4;
+//$item-icon-color: scale-color($general-background-color, $lightness: -50.6%); // #7e7e7e;
+
+$item-selected-background-color: scale-color($primary-color, $lightness: 90%);
+
 .step {
   display: flex;
   align-items: center;
-  background: $item-background-color;
+  background: $section-background-color;
   height: 75px;
   border-radius: 15px;
-  box-shadow: 0px 6px 6px $item-shadow-color;
+  box-shadow: 0px 6px 6px $shadow-color;
   margin-left: 12px;
   padding-top: 8px;
   margin-bottom: 23px;
@@ -18,19 +24,20 @@
     justify-content: center;
     align-items: center;
     font-size: 12.8px; //pourrait être plus grand
-    color: white;
+    color: $general-background-color;
     background: $primary-color;
     border-radius: 12px;
     height: 24px;
     width: 24px;
     margin-left: -12px;
     margin-right: 21px;
-    padding-top: 2px;
+    //padding-top: 2px;
   }
 
   &__icon {
     width: 41px;
-    color: $item-icon-color;
+    //color: $item-icon-color;
+    color: scale-color(change-color($primary-color, $saturation: 0%), $lightness: -17.6%);
     font-size: 18px;
   }
 
@@ -40,7 +47,7 @@
   }
 
   &:hover {
-    background: $item-selected-background-color;
+    background: mix($section-background-color, $primary-color, 96%);
   }
 
   &:hover &__icon {

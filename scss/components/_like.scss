@@ -26,7 +26,7 @@ $like-duration: 300ms;
 
 .like::before {
   color: $general-background-color;
-  text-shadow: text-stroke($like-thickness, black, 3);
+  text-shadow: text-stroke($like-thickness, $general-text-color, 3);
 }
 
 @keyframes like-off-hide {
@@ -42,7 +42,7 @@ $like-duration: 300ms;
 }
 
 .like::after {
-  background: linear-gradient(#9356dc, #ff79da);
+  background: linear-gradient($primary-color, $secondary-color);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

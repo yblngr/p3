@@ -13,20 +13,25 @@
 
 <body>
   <header>
-    <h1 class="logo">ohmyfood</h1>
+    <div class="container">
+      <h1 class="logo">ohmyfood</h1>
+    </div>
   </header>
   <main>
     <section class="search-form">
       <form>
         <div class="search-input">
-          <label class="search-input__label">
+          <label class="search-input__label" for="location">
             <i class="fa-solid fa-location-dot"></i>
-            <input class="search-input__field" type="text" placeholder="Paris, Belleville" required>
           </label>
+          <input class="search-input__field" type="text" name="location" placeholder="Paris, Belleville" required>
+          <div class="search-input__background"></div>
         </div>
-        <h2>Réservez le menu qui vous convient</h2>
-        <p> Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-        <button class="button">Explorer nos restaurants</button>
+        <div class="search-caption">
+          <h2>Réservez le menu qui vous convient</h2>
+          <p> Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+          <button class="button">Explorer nos restaurants</button>
+        </div>
       </form>
     </section>
     <section class="workflow">

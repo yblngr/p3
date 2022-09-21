@@ -1,17 +1,17 @@
 @charset 'utf-8';
 
-// 1. Configuration (abstracts)
+// 1. Configuration Sass (abstracts)
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 
 // 2. Tierces parties (vendors)
-// Intégration des codes de 'normalize' et 'fontawesome' abandonnée
-// en raison des erreurs et avertissements générés par le validateur du W3C
+//  Il est tout à fait possible d'intégrer ici les codes SCSS de 'normalize' et 'fontawesome'.
+//  Toutefois, cette intégration provoque le signalement d'erreurs et d'avertissements
+//  par le service de validation CSS du W3C (https://jigsaw.w3.org/css-validator/)
 
-// 3. Base (base)
+// 3. Styles de base (base)
 @import 'base/base';
-@import 'base/fonts';
 @import 'base/typography';
 
 // 4. Mise en page (layout)
@@ -30,7 +30,7 @@
 @import 'components/dish';
 
 // 6. Pages (pages)
-@import 'pages/homepage';
+@import 'pages/home';
 @import 'pages/restaurant';
 
 // 7. Thèmes (themes)
