@@ -2,50 +2,47 @@
 ** Styles spécifiques à la page d'accueil
 */
 
-.search-form {
+.search {
   text-align: center;
+  background: $section-background-color;
+  padding: 38px 0 57px 0;
 
   & h2 {
-    font-size: 23.7px;
+    font-size: 23.8px;
     font-weight: 700;
     padding: 0 45px;
-    margin: 0 0 13px 0;
+    margin-bottom: 14px;
   }
 
   & p {
-    font-size: 18.2px;
-    padding: 0 30px;
-    margin: 0 0 31px 0;
+    font-size: 17.8px;
+    padding: 0 20px;
+    margin-bottom: 33px;
   }
-}
-
-.search-caption {
-  background: $section-background-color;
-  padding: 39px 0 57px 0;
 }
 
 .workflow {
-  padding: 0 20px;
-  margin: 48px 0 0 0;
+  @include container;
+  padding-top: 48px;
+  padding-bottom: 45px;
 
   & h2 {
-    font-size: 23.3px;
+    font-size: 23.8px;
     font-weight: 700;
-    margin: 0 0 26px 0;
-  }
-
-  & ol {
-    list-style-type: none;
-    padding: 0 0 45px 0;
+    margin-bottom: 26px;
   }
 }
 
 .restaurants {
-  padding: 54px 20px 46px 20px;
+  padding: 54px 0 46px 0;
   background: $section-background-color;
 
+  & .container {
+    @include container;
+  }
+
   & h2 {
-    font-size: 23.4px;
-    margin: 0 0 23px 0;
+    font-size: 23.8px;
+    margin-bottom: 22px;
   }
 }

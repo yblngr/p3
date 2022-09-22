@@ -1,1 +1,9 @@
 // Mixins Sass
+
+@mixin container($padding: 20px) {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $padding;
+  padding-right: $padding;
+  max-width: $max-width;
+}

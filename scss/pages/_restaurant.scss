@@ -5,7 +5,8 @@
 main {
 
   & header {
-    margin: 0;
+    background-color: $section-background-color;
+
 
     & picture {
       display: flex;
@@ -18,13 +19,16 @@ main {
         object-fit: cover;
         width: 100%;
         align-self: stretch;
+
       }
     }
 
     & .label {
+      @include container;
       position: relative;
-      padding: 36px 20px 33px 20px;
-      background: $section-background-color;
+      padding-top: 35px;
+      padding-bottom: 34px;
+      background-color: $section-background-color;
       border-radius: 40px 40px 0 0;
       margin-top: -40px;
 
@@ -41,38 +45,45 @@ main {
         right: 38px;
         top: 38px;
       }
+
+      & .like::before {
+        color: $section-background-color;
+      }
+
     }
   }
 
   & .menu {
     background: $section-background-color;
-    padding: 0 12px 10px 14px;
+    padding-bottom: 12px;
 
-    & .service {
-      margin-bottom: 40px;
+    & .services {
+      @include container(13px);
 
-      &__name {
-        margin: 0 6px 14px 6px;
+      & .service {
 
-        & h2 {
-          text-transform: uppercase;
-          font-weight: 400;
-          font-size: 16.5px;
-          margin-bottom: 5px;
+        margin-bottom: 34px;
+
+        &__name {
+          margin: 0 6px 15px 6px;
+
+          & h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 16.4px;
+            margin-bottom: 5px;
+          }
         }
       }
     }
-  }
 
-  & .like::before {
-    color: $section-background-color;
   }
 
   & .order {
     display: flex;
     justify-content: center;
     background-color: $section-background-color;
-    padding-bottom: 83px;
+    padding-bottom: 58px;
 
     & .button {
       padding: 0 49px;

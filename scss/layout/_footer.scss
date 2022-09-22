@@ -4,7 +4,12 @@
 
 footer {
   background-color: scale-color($general-background-color, $lightness: -79.2%);
-  padding: 25px 25px 30px 25px;
+  padding-top: 24px;
+  padding-bottom: 31px;
+
+  & .container {
+    @include container(25px);
+  }
 
   & h1 {
     color: $general-background-color;

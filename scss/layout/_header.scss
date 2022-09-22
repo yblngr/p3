@@ -4,24 +4,25 @@
 
 body>header {
   background-color: $general-background-color;
-
-  .container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0 10px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 10px 0;
+  max-width: $max-width;
+  margin: 0 auto;
 
   & a {
-    font-size: 20.5px;
+    font-size: 20.3px;
     color: scale-color($general-text-color, $lightness: 20.8%);
     position: absolute;
-    left:23px;
+    left: 22px;
   }
 
   & .logo {
     font-size: 29px;
     margin: 0 auto;
   }
-}
+
+  // }
 }

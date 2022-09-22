@@ -20,6 +20,7 @@ p,
 h1,
 h2,
 h3,
+h4,
 ol,
 ul {
   margin: 0;
@@ -27,8 +28,8 @@ ul {
 
 // Listes (sans puces, ni numérotation, ni retrait)
 
-ul,
-ol {
+ol,
+ul {
   list-style-type: none;
   padding-left: 0;
 }
@@ -38,4 +39,9 @@ ol {
 a {
   color: $general-text-color;
   text-decoration: none;
+}
+
+body {
+  background: $general-background-color;
+  color: $general-text-color;
 }
