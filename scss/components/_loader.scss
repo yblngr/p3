@@ -2,95 +2,47 @@
 ** Animation au chargement
 */
 
-$plate-size: 200px;
-$loader-duration: 300ms;
+
+$loader-duration: 3000ms;
 
 .loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    animation: loader $loader-duration forwards;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $general-background-color;
+  animation: loader $loader-duration forwards;
 }
 
 .plate {
-    position: absolute;
-    width: $plate-size;
-    height: $plate-size;
-    border: $plate-size*0.2 solid $tertiary-color;
-    border-radius: 50%;
-    flex-shrink: 0;
+  position: absolute;
+  width: $plate-size;
+  height: $plate-size;
+  border: $plate-size*0.2 solid $tertiary-color;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .fork,
 .knife {
-    position: absolute;
-    width: 0.25*$plate-size;
-    height: 0.75*$plate-size;
-    opacity: 0.8;
+  position: absolute;
+  width: 0.25*$plate-size;
+  height: 0.75*$plate-size;
+  opacity: 0.8;
 }
 
 .fork {
-    fill: $primary-color;
-    animation: fork 0.8*$loader-duration linear both;
+  fill: $primary-color;
+  animation: fork 0.8*$loader-duration linear both;
 }
 
 .knife {
-    fill: $secondary-color;
-    animation: knife 0.8*$loader-duration linear both;
+  fill: $secondary-color;
+  animation: knife 0.8*$loader-duration linear both;
 }
 
-@keyframes loader {
-
-    from,
-    85% {
-        opacity: 1;
-    }
-
-    99%,
-    to {
-        opacity: 0;
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(0);
-    }
-}
-
-@keyframes fork {
-    from {
-        transform-origin: 50% 97.5%;
-        transform: scale(0.5) translateY(-97.5%) rotate(-720deg);
-    }
-
-    75% {
-        transform-origin: 50% 97.5%;
-        transform: scale(0.5) translateY(-97.5%) rotate(-270deg);
-    }
-
-    to {
-        transform: scale(1) translateX(-0.625*$plate-size);
-    }
-}
-
-@keyframes knife {
-    from {
-        transform-origin: 50% 97.5%;
-        transform: scale(.5) translateY(-97.5%) rotate(-1440deg);
-    }
-
-    75% {
-        transform-origin: 50% 97.5%;
-        transform: scale(.5) translateY(-97.5%) rotate(-90deg);
-    }
-
-    to {
-        transform: scale(1) translateX(0.625*$plate-size);
-    }
-}

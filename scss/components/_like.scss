@@ -2,9 +2,7 @@
 ** Styles et animation de l'icône 'like'
 */
 
-$like-size: 22px;
-$like-thickness: 1px;
-$like-duration: 300ms;
+
 
 .like {
   display: flex;
@@ -29,18 +27,6 @@ $like-duration: 300ms;
   text-shadow: text-stroke($like-thickness, $general-text-color, 3);
 }
 
-@keyframes like-off-hide {
-
-  0%,
-  70% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
 .like::after {
   background: linear-gradient($primary-color, $secondary-color);
   background-clip: text;
@@ -49,21 +35,7 @@ $like-duration: 300ms;
   opacity: 0;
 }
 
-@keyframes like-on-grow {
-  0% {
-    opacity: 0;
-    transform: translate(0, 0.4375*$like-size) scale(0.0);
-  }
-
-  50%,
-  100% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(0, 0) scale(calc(1 + 2*$like-thickness/$like-size));
-  }
-}
+$like-duration: 300ms;
 
 .like:hover {
   cursor: pointer;

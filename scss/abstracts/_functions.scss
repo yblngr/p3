@@ -3,6 +3,7 @@
 @use "sass:list";
 @use "sass:math";
 @use "sass:color";
+@use "sass:map";
 
 /// Retourne l'URL d'une police en fonction de son chemin
 /// @param {String} $path - chemin de la police

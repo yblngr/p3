@@ -1,9 +1,11 @@
 // Mixins Sass
 
+/// Mixin de centrage du contenu
+/// @param {Length} $padding [20px] - remplissage gauche et droit
 @mixin container($padding: 20px) {
-  margin-left: auto;
-  margin-right: auto;
+  max-width: map-get($breakpoints, "bp-max");
   padding-left: $padding;
   padding-right: $padding;
-  max-width: $max-width;
+  margin-left: auto;
+  margin-right: auto;
 }

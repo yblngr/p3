@@ -9,9 +9,9 @@ body>header {
   justify-content: center;
   align-items: center;
   padding: 20px 0 10px 0;
-  max-width: $max-width;
+  max-width: map-get($breakpoints, "bp-max");
   margin: 0 auto;
-
+  
   & a {
     font-size: 20.3px;
     color: scale-color($general-text-color, $lightness: 20.8%);
@@ -22,7 +22,6 @@ body>header {
   & .logo {
     font-size: 29px;
     margin: 0 auto;
+    z-index: 2;
   }
-
-  // }
 }

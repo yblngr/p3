@@ -26,7 +26,7 @@ ul {
   margin: 0;
 }
 
-// Listes (sans puces, ni numérotation, ni retrait)
+// Listes sans puces, ni numérotation, ni retrait
 
 ol,
 ul {
@@ -41,7 +41,10 @@ a {
   text-decoration: none;
 }
 
+// Corps de la page
+
 body {
   background: $general-background-color;
   color: $general-text-color;
+  min-width: map-get($breakpoints, "bp-min");
 }

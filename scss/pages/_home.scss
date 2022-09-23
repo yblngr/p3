@@ -24,25 +24,47 @@
 .workflow {
   @include container;
   padding-top: 48px;
-  padding-bottom: 45px;
+  padding-bottom: 68px;
 
   & h2 {
     font-size: 23.8px;
     font-weight: 700;
     margin-bottom: 26px;
   }
+
+  & ol {
+    display: flex;
+    flex-direction: column;
+    row-gap: 23px;
+
+    @media screen and (min-width: map-get($breakpoints, "bp-workflow")) {
+      flex-direction: row;
+      column-gap: 23px;
+    }
+  }
 }
 
 .restaurants {
-  padding: 54px 0 46px 0;
+  padding: 54px 0 64px 0;
   background: $section-background-color;
+
+  & h2 {
+    @include container;
+    font-size: 23.8px;
+    margin-bottom: 22px;
+  }
 
   & .container {
     @include container;
-  }
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
 
-  & h2 {
-    font-size: 23.8px;
-    margin-bottom: 22px;
+    @media screen and (min-width: map-get($breakpoints, "bp-restaurants")) {
+      flex-direction: row;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 18px;
+    }
   }
 }
