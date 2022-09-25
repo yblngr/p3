@@ -1,23 +1,23 @@
 /*
-** Styles spécifiques à la page d'accueil
+** Page d'accueil
 */
 
 .search {
+  padding: 38px 0 57px 0;
   text-align: center;
   background: $section-background-color;
-  padding: 38px 0 57px 0;
 
   & h2 {
-    font-size: 23.8px;
-    font-weight: 700;
     padding: 0 45px;
     margin-bottom: 14px;
+    font-size: 23.8px;
+    font-weight: 700;
   }
 
   & p {
-    font-size: 17.8px;
     padding: 0 20px;
     margin-bottom: 33px;
+    font-size: 17.8px;
   }
 }
 
@@ -27,44 +27,40 @@
   padding-bottom: 68px;
 
   & h2 {
+    margin-bottom: 26px;
     font-size: 23.8px;
     font-weight: 700;
-    margin-bottom: 26px;
   }
 
   & ol {
     display: flex;
     flex-direction: column;
-    row-gap: 23px;
+    gap: 23px;
 
     @media screen and (min-width: map-get($breakpoints, "bp-workflow")) {
       flex-direction: row;
-      column-gap: 23px;
     }
   }
 }
 
 .restaurants {
-  padding: 54px 0 64px 0;
-  background: $section-background-color;
+  padding: 54px 0 64px;
+  background-color: $section-background-color;
 
   & h2 {
     @include container;
-    font-size: 23.8px;
     margin-bottom: 22px;
+    font-size: 23.8px;
   }
 
   & .container {
-    @include container;
     display: flex;
     flex-direction: column;
-    row-gap: 18px;
+    @include container;
+    gap: 18px;
 
     @media screen and (min-width: map-get($breakpoints, "bp-restaurants")) {
-      flex-direction: row;
-      flex-direction: row;
-      flex-wrap: wrap;
-      column-gap: 18px;
+      flex-flow: row wrap;
     }
   }
 }

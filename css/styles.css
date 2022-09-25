@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /*
+** 'ohmyfood' - Feuille de styles SCSS
+*/
+/*
 ** Styles de base
 */
 html {
@@ -10,6 +13,12 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+body {
+  background: white;
+  color: black;
+  min-width: 240px;
 }
 
 p,
@@ -31,12 +40,6 @@ ul {
 a {
   color: black;
   text-decoration: none;
-}
-
-body {
-  background: white;
-  color: black;
-  min-width: 240px;
 }
 
 /*
@@ -112,7 +115,7 @@ h1 {
     transform: scale(1) translateX(125px);
   }
 }
-@keyframes like-off-hide {
+@keyframes like-hide {
   0%, 70% {
     opacity: 1;
   }
@@ -120,7 +123,7 @@ h1 {
     opacity: 0;
   }
 }
-@keyframes like-on-grow {
+@keyframes like-grow {
   0% {
     opacity: 0;
     transform: translate(0, 9.625px) scale(0);
@@ -151,37 +154,36 @@ h1 {
   }
 }
 /*
-** Styles pour l'en-tête de page
+** En-tête de page
 */
 body > header {
-  background-color: white;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0 10px 0;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px 0 10px 0;
+  background-color: white;
 }
 body > header a {
-  font-size: 20.3px;
-  color: #353535;
   position: absolute;
   left: 22px;
+  font-size: 20.3px;
+  color: #353535;
 }
 body > header .logo {
-  font-size: 29px;
-  margin: 0 auto;
   z-index: 2;
+  margin: 0 auto;
+  font-size: 29px;
 }
 
 /*
-** Styles pour le pied de page
+** Pied de page
 */
 footer {
+  padding: 24px 0 31px;
   background-color: #353535;
-  padding-top: 24px;
-  padding-bottom: 31px;
 }
 footer .container {
   max-width: 1200px;
@@ -191,24 +193,22 @@ footer .container {
   margin-right: auto;
 }
 footer h1 {
-  color: white;
+  margin-bottom: 16px;
   font-size: 17.9px;
   font-weight: 400;
-  margin-bottom: 16px;
+  color: white;
 }
 footer ul {
-  list-style-type: none;
   line-height: 26.2px;
-  padding-left: 0;
 }
 footer li a {
-  color: white;
   display: flex;
   align-items: center;
+  color: white;
 }
 footer li i {
-  font-size: 12.3px;
   padding-right: 22px;
+  font-size: 12.3px;
 }
 footer li p {
   font-size: 16.3px;
@@ -218,13 +218,13 @@ footer li p {
 ** Animation au chargement
 */
 .loader {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: white;
@@ -235,9 +235,9 @@ footer li p {
   position: absolute;
   width: 200px;
   height: 200px;
+  flex-shrink: 0;
   border: 40px solid #99e2d0;
   border-radius: 50%;
-  flex-shrink: 0;
 }
 
 .fork,
@@ -259,7 +259,7 @@ footer li p {
 }
 
 /*
-** Styles du champ du formulaire de recherche
+** Champ de saisie du formulaire de recherche
 */
 .input {
   display: flex;
@@ -271,17 +271,17 @@ footer li p {
 .input__label, .input__field {
   z-index: 1;
 }
+.input__label:hover, .input__field:hover {
+  cursor: pointer;
+}
 .input__field {
+  width: 140px;
   margin-left: 15px;
-  background-color: transparent;
-  border: none;
-  color: black;
   font-size: 15.5px;
   font-weight: 700;
-  width: 140px;
-}
-.input__field:hover {
-  cursor: pointer;
+  color: black;
+  background-color: transparent;
+  border: none;
 }
 .input__field:focus {
   outline: none;
@@ -289,8 +289,8 @@ footer li p {
 .input__background {
   position: absolute;
   left: 0;
-  height: 50px;
   width: 100%;
+  height: 50px;
   background-color: #9356dc;
   opacity: 0;
 }
@@ -299,40 +299,39 @@ footer li p {
 }
 
 /*
-** Style des boutons
+** Bouton
 */
 .button {
   height: 50px;
+  padding: 0 21px;
+  font-size: 16.3px;
+  color: white;
   background: linear-gradient(to top left, #9356dc, #ff79da);
   border: none;
   border-radius: 25px;
-  color: white;
-  font-size: 16.3px;
-  padding: 0 21px;
   box-shadow: 0px 5px 5px #c6c6c6;
-  transition-property: box-shadow, opacity;
-  transition-duration: 300ms;
+  transition: all 300ms;
 }
 .button:hover {
-  cursor: pointer;
   box-shadow: 0px 5px 5px #8c8c8c;
   opacity: 0.75;
+  cursor: pointer;
 }
 
 /*
-** Styles d'une étape du fonctionnement
+** Etape du fonctionnement
 */
 .step {
-  flex-grow: 1;
   display: flex;
   align-items: center;
-  background: #f6f6f6;
   height: 75px;
+  padding: 8px 18px 0 0;
+  margin-left: 12px;
+  flex-grow: 1;
+  background: #f6f6f6;
   border-radius: 15px;
   box-shadow: 0px 6px 6px #e4e4e4;
-  margin-left: 12px;
-  padding-top: 8px;
-  padding-right: 18px;
+  cursor: pointer;
 }
 @media screen and (min-width: 940px) {
   .step {
@@ -340,49 +339,47 @@ footer li p {
   }
 }
 .step__number {
-  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 24px;
+  height: 24px;
+  margin: 0 22px 0 -12px;
+  flex-shrink: 0;
   font-size: 12.8px;
   color: white;
-  background: #9356dc;
+  background-color: #9356dc;
   border-radius: 12px;
-  height: 24px;
-  width: 24px;
-  margin-left: -12px;
-  margin-right: 22px;
 }
 .step__icon {
   width: 41px;
   flex-shrink: 0;
-  color: #7e7e7e;
   font-size: 18px;
+  color: #7e7e7e;
 }
 .step__label {
-  font-weight: 700;
   font-size: 15.8px;
+  font-weight: 700;
 }
 .step:hover {
-  background: #f2f0f5;
+  background-color: #f5f0fc;
 }
 .step:hover .step__icon {
   color: #9356dc;
 }
 
 /*
-** Styles et animation de l'icône 'like'
+** Icône 'like'
 */
 .like {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 22px;
   height: 22px;
   font-family: "Font Awesome 6 Free";
-  font-weight: 900;
   font-size: 20px;
+  font-weight: 900;
 }
 
 .like::before,
@@ -397,10 +394,10 @@ footer li p {
 }
 
 .like::after {
+  color: transparent;
   background: linear-gradient(#9356dc, #ff79da);
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
   opacity: 0;
 }
 
@@ -408,25 +405,25 @@ footer li p {
   cursor: pointer;
 }
 .like:hover::before {
-  animation: like-off-hide 300ms ease-in-out forwards;
+  animation: like-hide 300ms ease-in-out forwards;
 }
 .like:hover::after {
-  animation: like-on-grow 300ms ease-in-out forwards;
+  animation: like-grow 300ms ease-in-out forwards;
 }
 
 /*
-** Styles d'une carte de restaurant
+** Carte de restaurant
 */
 .card {
+  background-color: white;
   border-radius: 15px;
-  overflow: hidden;
-  background: white;
   box-shadow: 0px 6px 6px #e4e4e4;
+  overflow: hidden;
 }
 @media screen and (min-width: 792px) {
   .card {
-    flex-basis: calc(50% - 9px);
     flex-grow: 1;
+    flex-basis: calc(50% - 9px);
   }
 }
 .card__picture {
@@ -438,57 +435,59 @@ footer li p {
   overflow: hidden;
 }
 .card__picture img {
-  object-fit: cover;
   width: 100%;
   align-self: stretch;
+  object-fit: cover;
 }
 .card__sticky {
   position: absolute;
-  background: #99e2d0;
-  color: #227661;
-  font-size: 13.6px;
-  font-weight: 700;
   top: 13px;
   right: 12px;
   padding: 6.5px 13px;
+  font-size: 13.6px;
+  font-weight: 700;
+  color: #227661;
+  background-color: #99e2d0;
   border-radius: 3px;
 }
 .card__label {
   position: relative;
   width: calc(100% - 46px);
-  padding: 16px 13px 15px 13px;
+  padding: 16px 13px 15px;
 }
 .card__label h3 {
-  font-size: 17.8px;
   margin-bottom: 5px;
+  font-size: 17.8px;
 }
 .card__label p {
   font-size: 16.9px;
 }
 .card__label .like {
   position: absolute;
-  font-size: 22px;
-  right: -22px;
   top: 22px;
+  right: -22px;
 }
 
 /*
-** Soulignement
+** Soulignement du service
 */
 .underline {
   width: 40px;
   height: 3px;
-  background: #99e2d0;
+  background-color: #99e2d0;
 }
 
+/*
+** Plat d'un menu
+*/
 .dish {
   display: flex;
-  background: white;
+  margin-bottom: 14px;
+  background-color: white;
   border-radius: 15px;
+  box-shadow: 0px 5px 5px #e4e4e4;
   overflow: hidden;
   cursor: pointer;
-  margin-bottom: 14px;
-  box-shadow: 0px 5px 5px #e4e4e4;
 }
 .dish:nth-child(1) {
   animation: fade-in 800ms 0ms backwards;
@@ -503,41 +502,41 @@ footer li p {
   animation: fade-in 800ms 540ms backwards;
 }
 .dish__name {
-  margin: 13px 0 12px 11px;
   width: 100%;
+  margin: 13px 0 12px 11px;
   white-space: nowrap;
   overflow: hidden;
 }
 .dish__name h4 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 17.9px;
   margin-bottom: 6px;
+  font-size: 17.9px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .dish__name p {
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-size: 14.7px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .dish__price {
   align-self: flex-end;
   flex-shrink: 0;
+  margin: 13px 23px 11px 13px;
   font-size: 14.7px;
   font-weight: 700;
-  margin: 13px 23px 11px 13px;
 }
 .dish__check {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  color: white;
   flex-shrink: 0;
   width: 59px;
-  background: #99e2d0;
-  font-size: 20px;
   margin-right: -59px;
+  font-family: "Font Awesome 6 Free";
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  background-color: #99e2d0;
   transition: margin-right 500ms ease-in-out;
 }
 .dish__check::before {
@@ -551,23 +550,23 @@ footer li p {
 }
 
 /*
-** Styles spécifiques à la page d'accueil
+** Page d'accueil
 */
 .search {
+  padding: 38px 0 57px 0;
   text-align: center;
   background: #f6f6f6;
-  padding: 38px 0 57px 0;
 }
 .search h2 {
-  font-size: 23.8px;
-  font-weight: 700;
   padding: 0 45px;
   margin-bottom: 14px;
+  font-size: 23.8px;
+  font-weight: 700;
 }
 .search p {
-  font-size: 17.8px;
   padding: 0 20px;
   margin-bottom: 33px;
+  font-size: 17.8px;
 }
 
 .workflow {
@@ -580,25 +579,24 @@ footer li p {
   padding-bottom: 68px;
 }
 .workflow h2 {
+  margin-bottom: 26px;
   font-size: 23.8px;
   font-weight: 700;
-  margin-bottom: 26px;
 }
 .workflow ol {
   display: flex;
   flex-direction: column;
-  row-gap: 23px;
+  gap: 23px;
 }
 @media screen and (min-width: 940px) {
   .workflow ol {
     flex-direction: row;
-    column-gap: 23px;
   }
 }
 
 .restaurants {
-  padding: 54px 0 64px 0;
-  background: #f6f6f6;
+  padding: 54px 0 64px;
+  background-color: #f6f6f6;
 }
 .restaurants h2 {
   max-width: 1200px;
@@ -606,30 +604,27 @@ footer li p {
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 23.8px;
   margin-bottom: 22px;
+  font-size: 23.8px;
 }
 .restaurants .container {
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  row-gap: 18px;
+  gap: 18px;
 }
 @media screen and (min-width: 792px) {
   .restaurants .container {
-    flex-direction: row;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 18px;
+    flex-flow: row wrap;
   }
 }
 
 /*
-** Styles spécifiques à la page des restaurants
+** Pages des restaurants
 */
 main header {
   background-color: #f6f6f6;
@@ -642,22 +637,21 @@ main header picture {
   overflow: hidden;
 }
 main header picture img {
-  object-fit: cover;
   width: 100%;
   align-self: stretch;
+  object-fit: cover;
 }
 main header .label {
+  position: relative;
   max-width: 1200px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
   padding-top: 35px;
   padding-bottom: 34px;
   background-color: #f6f6f6;
   border-radius: 40px 40px 0 0;
-  margin-top: 0;
 }
 @media screen and (max-width: 1200px) {
   main header .label {
@@ -683,19 +677,18 @@ main .menu {
   background: #f6f6f6;
 }
 main .menu .services {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   max-width: 1200px;
   padding-left: 13px;
   padding-right: 13px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
 }
 @media screen and (min-width: 1024px) {
   main .menu .services {
     flex-direction: row;
-    column-gap: 20px;
   }
 }
 main .menu .services .service {
@@ -707,13 +700,13 @@ main .menu .services .service {
   }
 }
 main .menu .services .service__name {
-  margin: 0 6px 15px 6px;
+  margin: 0 6px 15px;
 }
 main .menu .services .service__name h3 {
-  text-transform: uppercase;
+  margin-bottom: 5px;
   font-weight: 400;
   font-size: 16.4px;
-  margin-bottom: 5px;
+  text-transform: uppercase;
 }
 main .order {
   display: flex;

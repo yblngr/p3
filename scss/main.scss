@@ -1,25 +1,30 @@
+/*
+** 'ohmyfood' - Feuille de styles SCSS
+*/
+
 @charset 'utf-8';
 
-// 1. Configuration Sass (abstracts)
+// 1. Abstracts - Outils et helpers Sass
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
+//@import 'abstracts/placeholders';
 
-// 2. Tierces parties (vendors)
-//  Il est tout à fait possible d'intégrer ici les codes SCSS de 'normalize' et 'fontawesome'.
-//  Toutefois, cette intégration provoque le signalement d'erreurs et d'avertissements
+// 2. Vendors - Bibliothèques et frameworks externes
+//  Il est tout à fait possible d'intégrer ici les codes Sass de 'normalize' et 'fontawesome'.
+//  Toutefois, cette intégration provoque le signalement d'erreurs et/ou d'avertissements
 //  par le service de validation CSS du W3C (https://jigsaw.w3.org/css-validator/)
 
-// 3. Styles de base (base)
+// 3. Base - Styles standards
 @import 'base/base';
 @import 'base/typography';
 @import 'base/animations';
 
-// 4. Mise en page (layout)
+// 4. Layout - Mise en page
 @import 'layout/header';
 @import 'layout/footer';
 
-// 5. Composants (components)
+// 5. Components - Composants
 @import 'components/loader';
 @import 'components/input';
 @import 'components/button';
@@ -29,9 +34,8 @@
 @import 'components/underline';
 @import 'components/dish';
 
-// 6. Pages (pages)
+// 6. Pages - Styles spécifiques des pages
 @import 'pages/home';
 @import 'pages/restaurant';
 
-// 7. Thèmes (themes)
-//  Aucun thème n'a été défini
+// 7. Themes - Thèmes du site

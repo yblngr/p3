@@ -5,6 +5,7 @@
 // Loader
 // Animation principale
 $plate-size: 200px;
+$loader-duration: 3000ms;
 
 @keyframes loader {
 
@@ -62,7 +63,7 @@ $plate-size: 200px;
 $like-size: 22px;
 $like-thickness: 1px;
 
-@keyframes like-off-hide {
+@keyframes like-hide {
 
   0%,
   70% {
@@ -74,7 +75,7 @@ $like-thickness: 1px;
   }
 }
 
-@keyframes like-on-grow {
+@keyframes like-grow {
   0% {
     opacity: 0;
     transform: translate(0, 0.4375*$like-size) scale(0.0);

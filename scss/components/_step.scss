@@ -1,55 +1,48 @@
 /*
-** Styles d'une étape du fonctionnement
+** Etape du fonctionnement
 */
 
-$item-selected-background-color: scale-color($primary-color, $lightness: 90%);
-
 .step {
+  @include flex-center(false);
+  height: 75px;
+  padding: 8px 18px 0 0;
+  margin-left: 12px;
   flex-grow: 1;
+  background: $section-background-color;
+  border-radius: 15px;
+  box-shadow: 0px 6px 6px $shadow-color;
+  cursor: pointer;
 
   @media screen and (min-width: map-get($breakpoints, "bp-workflow")) {
     flex-basis: 0;
   }
 
-  display: flex;
-  align-items: center;
-  background: $section-background-color;
-  height: 75px;
-  border-radius: 15px;
-  box-shadow: 0px 6px 6px $shadow-color;
-  margin-left: 12px;
-  padding-top: 8px;
-  padding-right: 18px;
-
   &__number {
+    @include flex-center;
+    width: 24px;
+    height: 24px;
+    margin: 0 22px 0 -12px;
     flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 12.8px;
     color: $general-background-color;
-    background: $primary-color;
+    background-color: $primary-color;
     border-radius: 12px;
-    height: 24px;
-    width: 24px;
-    margin-left: -12px;
-    margin-right: 22px;
   }
 
   &__icon {
     width: 41px;
     flex-shrink: 0;
-    color: scale-color(change-color($primary-color, $saturation: 0%), $lightness: -17.6%);
     font-size: 18px;
+    color: scale-color(change-color($primary-color, $saturation: 0%), $lightness: -17.6%);
   }
 
   &__label {
-    font-weight: 700;
     font-size: 15.8px;
+    font-weight: 700;
   }
 
   &:hover {
-    background: mix($section-background-color, $primary-color, 96%);
+    background-color: scale-color($primary-color, $lightness: 91%);
   }
 
   &:hover &__icon {

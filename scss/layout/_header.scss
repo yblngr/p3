@@ -1,27 +1,25 @@
 /*
-** Styles pour l'en-tête de page
+** En-tête de page
 */
 
 body>header {
-  background-color: $general-background-color;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0 10px 0;
+  @include flex-center;
   max-width: map-get($breakpoints, "bp-max");
   margin: 0 auto;
-  
+  padding: 20px 0 10px 0;
+  background-color: $general-background-color;
+
   & a {
-    font-size: 20.3px;
-    color: scale-color($general-text-color, $lightness: 20.8%);
     position: absolute;
     left: 22px;
+    font-size: 20.3px;
+    color: scale-color($general-text-color, $lightness: 20.8%);
   }
 
   & .logo {
-    font-size: 29px;
-    margin: 0 auto;
     z-index: 2;
+    margin: 0 auto;
+    font-size: 29px;
   }
 }

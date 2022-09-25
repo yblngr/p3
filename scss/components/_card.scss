@@ -1,55 +1,51 @@
 /*
-** Styles d'une carte de restaurant
+** Carte de restaurant
 */
 
-$sticky-text-color: scale-color($tertiary-color, $lightness: -60%);
-
 .card {
+  background-color: $general-background-color;
   border-radius: 15px;
-  overflow: hidden;
-  background: $general-background-color;
   box-shadow: 0px 6px 6px $shadow-color;
+  overflow: hidden;
 
   @media screen and (min-width: map-get($breakpoints, "bp-restaurants")) {
-    flex-basis: calc(50% - 9px);
     flex-grow: 1;
+    flex-basis: calc(50% - 9px);
   }
 
   &__picture {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     height: 175px;
     overflow: hidden;
 
     & img {
-      object-fit: cover;
       width: 100%;
       align-self: stretch;
+      object-fit: cover;
     }
   }
 
   &__sticky {
     position: absolute;
-    background: $tertiary-color;
-    color: $sticky-text-color;
-    font-size: 13.6px;
-    font-weight: 700;
     top: 13px;
     right: 12px;
     padding: 6.5px 13px;
+    font-size: 13.6px;
+    font-weight: 700;
+    color: scale-color($tertiary-color, $lightness: -60%);
+    background-color: $tertiary-color;
     border-radius: 3px;
   }
 
   &__label {
     position: relative;
     width: calc(100% - 46px);
-    padding: 16px 13px 15px 13px;
+    padding: 16px 13px 15px;
 
     & h3 {
-      font-size: 17.8px;
       margin-bottom: 5px;
+      font-size: 17.8px;
     }
 
     & p {
@@ -58,9 +54,8 @@ $sticky-text-color: scale-color($tertiary-color, $lightness: -60%);
 
     & .like {
       position: absolute;
-      font-size: 22px;
-      right: -22px;
       top: 22px;
+      right: -22px;
     }
   }
 }

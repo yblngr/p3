@@ -14,6 +14,14 @@ html {
   box-sizing: inherit;
 }
 
+// Corps de la page
+
+body {
+  background: $general-background-color;
+  color: $general-text-color;
+  min-width: map-get($breakpoints, "bp-min");
+}
+
 // Suppression des marges des éléments
 
 p,
@@ -39,12 +47,4 @@ ul {
 a {
   color: $general-text-color;
   text-decoration: none;
-}
-
-// Corps de la page
-
-body {
-  background: $general-background-color;
-  color: $general-text-color;
-  min-width: map-get($breakpoints, "bp-min");
 }

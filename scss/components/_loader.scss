@@ -2,17 +2,12 @@
 ** Animation au chargement
 */
 
-
-$loader-duration: 3000ms;
-
 .loader {
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+  @include flex-center;
   width: 100vw;
   height: 100vh;
   background-color: $general-background-color;
@@ -23,9 +18,9 @@ $loader-duration: 3000ms;
   position: absolute;
   width: $plate-size;
   height: $plate-size;
+  flex-shrink: 0;
   border: $plate-size*0.2 solid $tertiary-color;
   border-radius: 50%;
-  flex-shrink: 0;
 }
 
 .fork,
@@ -45,4 +40,3 @@ $loader-duration: 3000ms;
   fill: $secondary-color;
   animation: knife 0.8*$loader-duration linear both;
 }
-

@@ -1,19 +1,14 @@
 /*
-** Styles et animation de l'icône 'like'
+** Icône 'like'
 */
 
-
-
 .like {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  @include flex-center;
   width: $like-size;
   height: $like-size;
   font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
   font-size: $like-size - 2*$like-thickness;
+  font-weight: 900;
 }
 
 .like::before,
@@ -28,23 +23,21 @@
 }
 
 .like::after {
+  color: transparent;
   background: linear-gradient($primary-color, $secondary-color);
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
   opacity: 0;
 }
-
-$like-duration: 300ms;
 
 .like:hover {
   cursor: pointer;
 
   &::before {
-    animation: like-off-hide $like-duration ease-in-out forwards;
+    animation: like-hide 300ms ease-in-out forwards;
   }
 
   &::after {
-    animation: like-on-grow $like-duration ease-in-out forwards;
+    animation: like-grow 300ms ease-in-out forwards;
   }
 }

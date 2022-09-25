@@ -1,5 +1,5 @@
 /*
-** Styles spécifiques à la page des restaurants
+** Pages des restaurants
 */
 
 main {
@@ -8,27 +8,24 @@ main {
     background-color: $section-background-color;
 
     & picture {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
       height: 260px;
       overflow: hidden;
 
       & img {
-        object-fit: cover;
         width: 100%;
         align-self: stretch;
+        object-fit: cover;
       }
     }
 
     & .label {
-      @include container;
       position: relative;
+      @include container;
       padding-top: 35px;
       padding-bottom: 34px;
       background-color: $section-background-color;
       border-radius: 40px 40px 0 0;
-      margin-top: 0;
 
       @media screen and (max-width: map-get($breakpoints, "bp-max")) {
         margin-top: -40px;
@@ -58,14 +55,13 @@ main {
     background: $section-background-color;
 
     & .services {
-      @include container(13px);
       display: flex;
       flex-direction: column;
-      row-gap: 20px;
+      gap: 20px;
+      @include container(13px);
 
       @media screen and (min-width: map-get($breakpoints, "bp-menu")) {
         flex-direction: row;
-        column-gap: 20px;
       }
 
       & .service {
@@ -76,23 +72,21 @@ main {
         }
 
         &__name {
-          margin: 0 6px 15px 6px;
+          margin: 0 6px 15px;
 
           & h3 {
-            text-transform: uppercase;
+            margin-bottom: 5px;
             font-weight: 400;
             font-size: 16.4px;
-            margin-bottom: 5px;
+            text-transform: uppercase;
           }
         }
-
       }
     }
   }
 
   & .order {
-    display: flex;
-    justify-content: center;
+    @include flex-center(true, false);
     background-color: $section-background-color;
     padding: 32px 0 58px;
 

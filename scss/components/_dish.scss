@@ -1,63 +1,63 @@
-$dish-animation-duration: 800ms;
-$dish-animation-delay: 180ms;
-$check-animation-duration: 500ms;
+/*
+** Plat d'un menu
+*/
+
+$animation-delay: 180ms;
 
 .dish {
   display: flex;
-  background: $general-background-color;
+  margin-bottom: 14px;
+  background-color: $general-background-color;
   border-radius: 15px;
+  box-shadow: 0px 5px 5px $shadow-color;
   overflow: hidden;
   cursor: pointer;
-  margin-bottom: 14px;
-  box-shadow: 0px 5px 5px $shadow-color;
 
   @for $i from 1 through 4 {
     &:nth-child(#{$i}) {
-      animation: fade-in $dish-animation-duration $dish-animation-delay*($i - 1) backwards;
+      animation: fade-in 800ms $animation-delay*($i - 1) backwards;
     }
   }
 
   &__name {
-    margin: 13px 0 12px 11px;
     width: 100%;
+    margin: 13px 0 12px 11px;
     white-space: nowrap;
     overflow: hidden;
 
     & h4 {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 17.9px;
       margin-bottom: 6px;
+      font-size: 17.9px;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     & p {
-      overflow: hidden;
-      text-overflow: ellipsis;
       font-size: 14.7px;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 
   &__price {
     align-self: flex-end;
     flex-shrink: 0;
+    margin: 13px 23px 11px 13px;
     font-size: 14.7px;
     font-weight: 700;
-    margin: 13px 23px 11px 13px;
   }
 
   &__check {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    color: $general-background-color;
+    @include flex-center;
     flex-shrink: 0;
     width: 59px;
-    background: $tertiary-color;
-    font-size: 20px;
     margin-right: -59px;
-    transition: margin-right $check-animation-duration ease-in-out;
+    font-family: 'Font Awesome 6 Free';
+    font-size: 20px;
+    font-weight: 900;
+    color: $general-background-color;
+    background-color: $tertiary-color;
+    transition: margin-right 500ms ease-in-out;
 
     &::before {
       content: "\f058";
@@ -69,7 +69,7 @@ $check-animation-duration: 500ms;
       margin-right: 0;
 
       &::before {
-        animation: spin $check-animation-duration ease-out forwards;
+        animation: spin 500ms ease-out forwards;
       }
     }
   }
