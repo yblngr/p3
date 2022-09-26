@@ -11,4 +11,4 @@
 > Le projet a été développé au moyen de **Visual Studio Code**.\
 > Le code CSS a été généré au moyen du préprocesseur **Sass**.\
 > Le code Sass (SCSS) a été structuré suivant le **modèle "7 en 1"** *(7-1 pattern)*.\
-> Une **version en ligne** de ce projet est disponible sur https://yblngr.github.io/p3/
+> Une **version en ligne** de ce projet est disponible sur https://yblngr.github.io/
