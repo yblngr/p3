@@ -1,0 +1,22 @@
+/*
+** Formulaire de recherche en page d'accueil
+*/
+
+.search {
+  padding: 38px 0 57px 0;
+  text-align: center;
+  background: $section-background-color;
+
+  h2 {
+    padding: 0 45px;
+    margin-bottom: 14px;
+    font-size: 23.8px;
+    font-weight: 700;
+  }
+
+  p {
+    padding: 0 20px;
+    margin-bottom: 33px;
+    font-size: 17.8px;
+  }
+}

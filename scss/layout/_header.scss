@@ -2,29 +2,18 @@
 ** En-tête de page
 */
 
-body>header {
-  position: relative;
+header:not(.signboard) {
   @include flex-center;
-  max-width: map-get($breakpoints, "bp-max");
-  margin: 0 auto;
-  padding: 20px 0 10px 0;
+  position: relative;
+  @include container(0);
+  padding-top: 20px;
+  padding-bottom: 10px;
   background-color: $general-background-color;
 
-  & a {
+  a {
     position: absolute;
     left: 22px;
     font-size: 20.3px;
     color: scale-color($general-text-color, $lightness: 20.8%);
-  }
-
-  & .logo {
-    z-index: 2;
-    margin: 0 auto;
-    font-size: 29px;
-    color: $logo-text-color;
-
-    &--animated {
-      animation: logo $loader-duration;
-    }
   }
 }

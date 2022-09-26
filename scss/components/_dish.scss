@@ -25,14 +25,14 @@ $animation-delay: 180ms;
     white-space: nowrap;
     overflow: hidden;
 
-    & h4 {
+    h4 {
       margin-bottom: 6px;
       font-size: 17.9px;
       text-overflow: ellipsis;
       overflow: hidden;
     }
 
-    & p {
+    p {
       font-size: 14.7px;
       text-overflow: ellipsis;
       overflow: hidden;

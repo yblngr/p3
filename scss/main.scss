@@ -22,10 +22,16 @@
 
 // 4. Layout - Mise en page
 @import 'layout/header';
+@import 'layout/search';
+@import 'layout/workflow';
+@import 'layout/restaurants';
+@import 'layout/signboard';
+@import 'layout/menu';
+@import 'layout/order';
 @import 'layout/footer';
 
 // 5. Components - Composants
-@import 'components/loader';
+@import 'components/logo';
 @import 'components/input';
 @import 'components/button';
 @import 'components/step';
@@ -33,9 +39,8 @@
 @import 'components/card';
 @import 'components/underline';
 @import 'components/dish';
+@import 'components/loader';
 
 // 6. Pages - Styles spécifiques des pages
-@import 'pages/home';
-@import 'pages/restaurant';
 
 // 7. Themes - Thèmes du site

@@ -49,21 +49,18 @@ a {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: url("../assets/fonts/Roboto-Regular.woff2") format("woff2"), url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
   src: url("../assets/fonts/Roboto-Bold.woff2") format("woff2"), url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Shrikhand";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.ttf") format("truetype");
 }
 body {
@@ -164,30 +161,206 @@ h1 {
 /*
 ** En-tête de page
 */
-body > header {
-  position: relative;
+header:not(.signboard) {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0 10px 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
   background-color: white;
 }
-body > header a {
+header:not(.signboard) a {
   position: absolute;
   left: 22px;
   font-size: 20.3px;
   color: #353535;
 }
-body > header .logo {
-  z-index: 2;
-  margin: 0 auto;
-  font-size: 29px;
-  color: #101010;
+
+/*
+** Formulaire de recherche en page d'accueil
+*/
+.search {
+  padding: 38px 0 57px 0;
+  text-align: center;
+  background: #f6f6f6;
 }
-body > header .logo--animated {
-  animation: logo 3000ms;
+.search h2 {
+  padding: 0 45px;
+  margin-bottom: 14px;
+  font-size: 23.8px;
+  font-weight: 700;
+}
+.search p {
+  padding: 0 20px;
+  margin-bottom: 33px;
+  font-size: 17.8px;
+}
+
+/*
+** Section 'Fonctionnement' en page d'accueil
+*/
+.workflow {
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 48px;
+  padding-bottom: 68px;
+}
+.workflow h2 {
+  margin-bottom: 26px;
+  font-size: 23.8px;
+  font-weight: 700;
+}
+.workflow ol {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+@media screen and (min-width: 940px) {
+  .workflow ol {
+    flex-direction: row;
+  }
+}
+
+/*
+** Section 'Restaurants' en page d'accueil
+*/
+.restaurants {
+  padding: 54px 0 64px;
+  background-color: #f6f6f6;
+}
+.restaurants h2 {
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 22px;
+  font-size: 23.8px;
+}
+.restaurants .container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 18px;
+}
+@media screen and (min-width: 792px) {
+  .restaurants .container {
+    flex-flow: row wrap;
+  }
+}
+
+/*
+** Enseigne en page restaurant
+*/
+.signboard {
+  background-color: #f6f6f6;
+}
+.signboard picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 260px;
+  overflow: hidden;
+}
+.signboard picture img {
+  width: 100%;
+  align-self: stretch;
+  object-fit: cover;
+}
+.signboard .label {
+  position: relative;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 35px;
+  padding-bottom: 34px;
+  background-color: #f6f6f6;
+  border-radius: 40px 40px 0 0;
+}
+@media screen and (max-width: 1200px) {
+  .signboard .label {
+    margin-top: -40px;
+  }
+}
+.signboard .label h1 {
+  display: inline-block;
+  width: calc(100% - 46px);
+  font-size: 28px;
+  font-weight: 400;
+}
+.signboard .label .like {
+  position: absolute;
+  font-size: 22px;
+  right: 38px;
+  top: 38px;
+}
+.signboard .label .like::before {
+  color: #f6f6f6;
+}
+
+/*
+** Section de menu en page restaurant
+*/
+.menu {
+  background: #f6f6f6;
+}
+.menu .services {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  padding-left: 13px;
+  padding-right: 13px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 1024px) {
+  .menu .services {
+    flex-direction: row;
+  }
+  .menu .services .service {
+    width: calc((100% - 40px) / 3);
+  }
+}
+.menu .services .service {
+  flex-shrink: 0;
+}
+.menu .services .service__name {
+  margin: 0 6px 15px;
+}
+.menu .services .service__name h3 {
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 16.4px;
+  text-transform: uppercase;
+}
+
+/*
+** Validation de la commande en page restaurant
+*/
+.order {
+  display: flex;
+  justify-content: center;
+  background-color: #f6f6f6;
+  padding: 32px 0 58px;
+}
+.order .button {
+  padding: 0 49px;
 }
 
 /*
@@ -227,47 +400,16 @@ footer li p {
 }
 
 /*
-** Animation au chargement
+** Logo
 */
-.loader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  animation: loader 3000ms forwards;
+.logo {
+  z-index: 2;
+  margin: 0 auto;
+  font-size: 29px;
+  color: #101010;
 }
-
-.plate {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  flex-shrink: 0;
-  border: 40px solid #99e2d0;
-  border-radius: 50%;
-}
-
-.fork,
-.knife {
-  position: absolute;
-  width: 50px;
-  height: 150px;
-  opacity: 0.8;
-}
-
-.fork {
-  fill: #9356dc;
-  animation: fork 2400ms linear both;
-}
-
-.knife {
-  fill: #ff79da;
-  animation: knife 2400ms linear both;
+.logo--animated {
+  animation: logo 3000ms;
 }
 
 /*
@@ -481,7 +623,7 @@ footer li p {
 }
 
 /*
-** Soulignement du service
+** Soulignement du nom de service
 */
 .underline {
   width: 40px;
@@ -562,172 +704,47 @@ footer li p {
 }
 
 /*
-** Page d'accueil
+** Animation au chargement de la page d'accueil
 */
-.search {
-  padding: 38px 0 57px 0;
-  text-align: center;
-  background: #f6f6f6;
-}
-.search h2 {
-  padding: 0 45px;
-  margin-bottom: 14px;
-  font-size: 23.8px;
-  font-weight: 700;
-}
-.search p {
-  padding: 0 20px;
-  margin-bottom: 33px;
-  font-size: 17.8px;
-}
-
-.workflow {
-  max-width: 1200px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 48px;
-  padding-bottom: 68px;
-}
-.workflow h2 {
-  margin-bottom: 26px;
-  font-size: 23.8px;
-  font-weight: 700;
-}
-.workflow ol {
-  display: flex;
-  flex-direction: column;
-  gap: 23px;
-}
-@media screen and (min-width: 940px) {
-  .workflow ol {
-    flex-direction: row;
-  }
-}
-
-.restaurants {
-  padding: 54px 0 64px;
-  background-color: #f6f6f6;
-}
-.restaurants h2 {
-  max-width: 1200px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 22px;
-  font-size: 23.8px;
-}
-.restaurants .container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  gap: 18px;
-}
-@media screen and (min-width: 792px) {
-  .restaurants .container {
-    flex-flow: row wrap;
-  }
-}
-
-/*
-** Pages des restaurants
-*/
-main header {
-  background-color: #f6f6f6;
-}
-main header picture {
+.loader {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 260px;
-  overflow: hidden;
-}
-main header picture img {
-  width: 100%;
-  align-self: stretch;
-  object-fit: cover;
-}
-main header .label {
-  position: relative;
-  max-width: 1200px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 35px;
-  padding-bottom: 34px;
-  background-color: #f6f6f6;
-  border-radius: 40px 40px 0 0;
-}
-@media screen and (max-width: 1200px) {
-  main header .label {
-    margin-top: -40px;
-  }
-}
-main header .label h1 {
-  display: inline-block;
-  width: calc(100% - 46px);
-  font-size: 28px;
-  font-weight: 400;
-}
-main header .label .like {
   position: absolute;
-  font-size: 22px;
-  right: 38px;
-  top: 38px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  animation: loader 3000ms forwards;
 }
-main header .label .like::before {
-  color: #f6f6f6;
-}
-main .menu {
-  background: #f6f6f6;
-}
-main .menu .services {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 1200px;
-  padding-left: 13px;
-  padding-right: 13px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media screen and (min-width: 1024px) {
-  main .menu .services {
-    flex-direction: row;
-  }
-}
-main .menu .services .service {
+
+.plate {
+  position: absolute;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
+  border: 40px solid #99e2d0;
+  border-radius: 50%;
 }
-@media screen and (min-width: 1024px) {
-  main .menu .services .service {
-    width: calc((100% - 40px) / 3);
-  }
+
+.fork,
+.knife {
+  position: absolute;
+  width: 50px;
+  height: 150px;
+  opacity: 0.8;
 }
-main .menu .services .service__name {
-  margin: 0 6px 15px;
+
+.fork {
+  fill: #9356dc;
+  animation: fork 2400ms linear both;
 }
-main .menu .services .service__name h3 {
-  margin-bottom: 5px;
-  font-weight: 400;
-  font-size: 16.4px;
-  text-transform: uppercase;
-}
-main .order {
-  display: flex;
-  justify-content: center;
-  background-color: #f6f6f6;
-  padding: 32px 0 58px;
-}
-main .order .button {
-  padding: 0 49px;
+
+.knife {
+  fill: #ff79da;
+  animation: knife 2400ms linear both;
 }
 
 /*# sourceMappingURL=styles.css.map */

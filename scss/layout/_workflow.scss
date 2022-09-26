@@ -1,0 +1,25 @@
+/*
+** Section 'Fonctionnement' en page d'accueil
+*/
+
+.workflow {
+  @include container;
+  padding-top: 48px;
+  padding-bottom: 68px;
+
+  h2 {
+    margin-bottom: 26px;
+    font-size: 23.8px;
+    font-weight: 700;
+  }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+
+    @media screen and (min-width: map-get($breakpoints, "bp-workflow")) {
+      flex-direction: row;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/*
+** Section 'Restaurants' en page d'accueil
+*/
+
+.restaurants {
+  padding: 54px 0 64px;
+  background-color: $section-background-color;
+
+  h2 {
+    @include container;
+    margin-bottom: 22px;
+    font-size: 23.8px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    @include container;
+    gap: 18px;
+
+    @media screen and (min-width: map-get($breakpoints, "bp-restaurants")) {
+      flex-flow: row wrap;
+    }
+  }
+}

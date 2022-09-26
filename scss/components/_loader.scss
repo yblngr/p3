@@ -1,13 +1,13 @@
 /*
-** Animation au chargement
+** Animation au chargement de la page d'accueil
 */
 
 .loader {
+  @include flex-center;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  @include flex-center;
   width: 100vw;
   height: 100vh;
   background-color: $general-background-color;

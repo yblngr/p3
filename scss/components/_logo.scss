@@ -1,0 +1,14 @@
+/*
+** Logo
+*/
+
+.logo {
+  z-index: 2;
+  margin: 0 auto;
+  font-size: 29px;
+  color: $logo-text-color;
+
+  &--animated {
+    animation: logo $loader-duration;
+  }
+}

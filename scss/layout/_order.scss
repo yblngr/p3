@@ -1,0 +1,13 @@
+/*
+** Validation de la commande en page restaurant
+*/
+
+.order {
+  @include flex-center(true, false);
+  background-color: $section-background-color;
+  padding: 32px 0 58px;
+
+  .button {
+    padding: 0 49px;
+  }
+}

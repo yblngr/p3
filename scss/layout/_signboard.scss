@@ -1,0 +1,50 @@
+/*
+** Enseigne en page restaurant
+*/
+
+.signboard {
+  background-color: $section-background-color;
+
+  picture {
+    @include flex-center;
+    height: 260px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      align-self: stretch;
+      object-fit: cover;
+    }
+  }
+
+  .label {
+    position: relative;
+    @include container;
+    padding-top: 35px;
+    padding-bottom: 34px;
+    background-color: $section-background-color;
+    border-radius: 40px 40px 0 0;
+
+    @media screen and (max-width: map-get($breakpoints, "bp-max")) {
+      margin-top: -40px;
+    }
+
+    h1 {
+      display: inline-block;
+      width: calc(100% - 46px);
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .like {
+      position: absolute;
+      font-size: 22px;
+      right: 38px;
+      top: 38px;
+    }
+
+    .like::before {
+      color: $section-background-color;
+    }
+  }
+}
