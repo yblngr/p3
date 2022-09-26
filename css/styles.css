@@ -78,7 +78,7 @@ h1 {
 ** Animations
 */
 @keyframes loader {
-  from, 85% {
+  from, 80% {
     opacity: 1;
   }
   99%, to {
@@ -87,6 +87,14 @@ h1 {
   }
   to {
     transform: scale(0);
+  }
+}
+@keyframes logo {
+  from, 80% {
+    color: #99e2d0;
+  }
+  to {
+    color: #101010;
   }
 }
 @keyframes fork {
@@ -176,6 +184,10 @@ body > header .logo {
   z-index: 2;
   margin: 0 auto;
   font-size: 29px;
+  color: #101010;
+}
+body > header .logo--animated {
+  animation: logo 3000ms;
 }
 
 /*
