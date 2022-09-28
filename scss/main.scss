@@ -8,12 +8,12 @@
 @import 'abstracts/variables';
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
-//@import 'abstracts/placeholders';
 
 // 2. Vendors - Bibliothèques et frameworks externes
 //  Il est tout à fait possible d'intégrer ici les codes Sass de 'normalize' et 'fontawesome'.
 //  Toutefois, cette intégration provoque le signalement d'erreurs et/ou d'avertissements
 //  par le service de validation CSS du W3C (https://jigsaw.w3.org/css-validator/)
+// 'normalize' est chargé via un CDN et 'fontawesome' via un kit FontAwesome en JavaScript.
 
 // 3. Base - Styles standards
 @import 'base/base';
